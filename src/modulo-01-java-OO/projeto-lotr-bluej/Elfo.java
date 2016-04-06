@@ -31,4 +31,7 @@ public class Elfo
     public int getFlechas(){
         return flechas;
     }
+    public String toString(){
+        return (nome + " possui " + flechas + " flechas e " + experiencia + " níveis de experiência.");
+    }
 }
