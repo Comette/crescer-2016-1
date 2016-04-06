@@ -32,6 +32,6 @@ public class Elfo
         return flechas;
     }
     public String toString(){
-        return (nome + " possui " + flechas + " flechas e " + experiencia + " níveis de experiência.");
+        return (nome + " possui " + flechas + " flechas e " + experiencia + " niveis de experiencia.");
     }
 }

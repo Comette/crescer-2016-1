@@ -25,4 +25,12 @@ public class ElfoTest
         boolean resultado = (elfo.getFlechas() == 41 && elfo.getExperiencia() == 1 && anao.getVida() == 100);
         assertEquals(true, resultado);
     }
+    @Test
+    public void testaToString(){
+        Elfo elfo = new Elfo("Legolas");
+        String correta = "Legolas possui 42 flechas e 0 niveis de experiencia.";
+        String resultado = elfo.toString();        
+        assertEquals(true, correta.equals(resultado));
+        
+    }
 }
