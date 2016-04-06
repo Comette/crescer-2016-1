@@ -21,5 +21,14 @@ public class Elfo
             experiencia++;
             anao.levaFlechada();
         }
-    }    
+    }   
+    public String getNome(){
+        return nome;
+    }
+    public int getExperiencia(){
+        return experiencia;
+    }
+    public int getFlechas(){
+        return flechas;
+    }
 }
