@@ -1,11 +1,9 @@
 
 public class Elfo
-{
- 
+{ 
     private String nome;
     private int experiencia;
-    private int flechas = 42;
-    private boolean acertar;
+    private int flechas = 42;    
 
     public Elfo(String name)
     {
@@ -16,31 +14,12 @@ public class Elfo
         nome = name;
         flechas = arrows;
     }    
-    public void atirarFlecha()
+    public void atirarFlecha(Dwarf anao)
     {
         if (flechas > 0){
             flechas--;
             experiencia++;
+            anao.levaFlechada();
         }
-    }
-    public void atirarFlechaRefactory()
-    {
-        flechas--;
-        if(acertar)
-        {            
-            experiencia++;            
-        }
-    }
-    public void cheatMira()
-    {
-        if(acertar){
-            acertar = false;
-        }else{
-            acertar = true;
-        }
-    }
-    public void atirarEmDwarf(Dwarf anao){
-        flechas--;
-        anao.levaFlechada();
-    }
+    }    
 }

@@ -6,13 +6,7 @@ public class CestoDeLembas
     {
         nLembas = num;        
     }
-    public boolean podeDividir(int personagens){
-        if(personagens >= 1 && personagens <= 100 && personagens <= nLembas){        
-            int lembasPorPersonagem = nLembas / personagens;
-            if (lembasPorPersonagem % 2 == 0){
-                return true;
-            }
-        }
-        return false;
+    public boolean podeDividir(){        
+        return (nLembas > 2 && nLembas <= 100 && nLembas % 2 == 0);
     }    
 }

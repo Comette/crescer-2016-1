@@ -2,8 +2,10 @@
 public class Dwarf
 {
     private int vida = 110;
-    public Dwarf()
+    private String nome;
+    public Dwarf(String nome)
     {        
+        this.nome = nome;
     }
     public void levaFlechada(){
         if (vida >= 10){
