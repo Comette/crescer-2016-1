@@ -6,19 +6,19 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
-    public void criaElfoSohComNome(){
+    public void criaElfoComNomeFlechasDefault(){
         Elfo elfo = new Elfo("Legolas");
         boolean resultado = (elfo.getNome() == "Legolas" && elfo.getFlechas() == 42);
         assertTrue(resultado);
     }
     @Test
-    public void criaElfoComNomeEFlechas(){
+    public void criaElfoComNomeComFlechas(){
         Elfo elfo = new Elfo("Legolas", 20);
         boolean resultado = (elfo.getNome() == "Legolas" && elfo.getFlechas() == 20);
         assertTrue(resultado);
     }
     @Test
-    public void testaAtirarFlecha(){
+    public void testaAtirarFlechaPerderFlechaGanhaExperiencia(){
         Elfo elfo = new Elfo("Legolas");
         Dwarf anao = new Dwarf("Sofredor");
         elfo.atirarFlecha(anao);
