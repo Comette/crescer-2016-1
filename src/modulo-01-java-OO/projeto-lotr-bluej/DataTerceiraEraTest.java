@@ -7,7 +7,7 @@ public class DataTerceiraEraTest
 {
     @Test
     public void testaEhBissextoComAnoBissexto(){
-        DataTerceiraEra data = new DataTerceiraEra(06, 04, 12);
+        DataTerceiraEra data = new DataTerceiraEra(06, 04, 3012);
         assertTrue(data.ehBissexto());
     }
 }
