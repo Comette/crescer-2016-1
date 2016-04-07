@@ -10,7 +10,7 @@ public class Dwarf
     }
     public void levaFlechada(){
       if(vida >= 10){
-          vida -=10;
+          vida -= 10;
       }else{
           vida = 0;
       }

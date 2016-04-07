@@ -26,18 +26,16 @@ public class DwarfTest
     @Test
     public void mataDwarfCom11Flechadas(){
         Dwarf dwarf = new Dwarf("Gimli");
-        Elfo elfo = new Elfo("Legolas");
         for(int i=0; i<11; i++){
-            elfo.atirarFlecha(dwarf);
+            dwarf.levaFlechada();
         }
         assertEquals(Status.MORTO, dwarf.getStatus());
     }
     @Test
     public void testaDwarfNaoPodeTerVidaNegativa(){
         Dwarf dwarf = new Dwarf("Gimli");
-        Elfo elfo = new Elfo("Legolas");
         for(int i=0; i<12; i++){
-            elfo.atirarFlecha(dwarf);
+            dwarf.levaFlechada();
         }
         assertEquals(0, dwarf.getVida());
     }
