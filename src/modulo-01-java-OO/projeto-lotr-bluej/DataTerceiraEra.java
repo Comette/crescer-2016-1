@@ -17,6 +17,6 @@ public class DataTerceiraEra
         return ano;
     }
     public boolean ehBissexto(){
-        return (ano % 6 == 0);
+        return (ano % 4 == 0);
     }
 }
