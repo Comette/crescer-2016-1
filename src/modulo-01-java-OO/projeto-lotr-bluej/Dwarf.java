@@ -9,10 +9,14 @@ public class Dwarf
         this.nome = nome;
     }
     public void levaFlechada(){
-        vida -= 10;
+      if(vida >= 10){
+          vida -=10;
+      }else{
+          vida = 0;
+      }
       if(vida == 0){
             status = Status.MORTO;
-        }
+      }
     }
     public void setNome(String nome){
         this.nome = nome;
