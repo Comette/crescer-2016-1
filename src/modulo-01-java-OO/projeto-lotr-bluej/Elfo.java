@@ -5,14 +5,14 @@ public class Elfo
     private int experiencia;
     private int flechas = 42;    
 
-    public Elfo(String name)
+    public Elfo(String nome)
     {
-        nome = name;        
+        this.nome = nome;        
     }
-    public Elfo (String name, int arrows)
+    public Elfo (String nome, int flechas)
     {
-        nome = name;
-        flechas = arrows;
+        this(nome);
+        this.flechas = flechas;
     }    
     public void atirarFlecha(Dwarf anao)
     {
