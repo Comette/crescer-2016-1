@@ -32,6 +32,7 @@ public class Elfo
         return flechas;
     }
     public String toString(){
-        return (nome + " possui " + flechas + " flechas e " + experiencia + " niveis de experiencia.");
+        boolean flechaSingular = Math.abs(flechas) == 1;
+        return String.format("%s possui %d %s e %d níveis de experiência.", nome, flechas, flechaSingular ? "flecha" : "flechas", experiencia);
     }
 }

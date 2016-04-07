@@ -26,9 +26,15 @@ public class ElfoTest
         assertTrue(resultado);
     }
     @Test
-    public void testaToString(){
+    public void testaToStringNoPlural(){
         Elfo elfo = new Elfo("Legolas");
-        String correta = "Legolas possui 42 flechas e 0 niveis de experiencia.";                
-        assertTrue(correta.equals(elfo.toString()));        
+        String correta = "Legolas possui 42 flechas e 0 níveis de experiência.";                
+        assertEquals(correta, elfo.toString());        
+    }
+    @Test
+    public void testaToStringNoSingular(){
+        Elfo elfo = new Elfo("Legolas", 1);
+        String correta = "Legolas possui 1 flecha e 0 níveis de experiência.";                
+        assertEquals(correta, elfo.toString());        
     }
 }
