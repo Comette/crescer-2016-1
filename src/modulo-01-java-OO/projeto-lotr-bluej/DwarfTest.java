@@ -66,18 +66,15 @@ public class DwarfTest
     @Test
     public void testaGetNumeroSorteComNascimentoBissextoVida80(){
         Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
-        dwarf.levaFlechada();
-        dwarf.levaFlechada();
-        dwarf.levaFlechada();
+        for(int i=0; i<3; i++){
+            dwarf.levaFlechada();
+        }
         assertEquals((-3333), dwarf.getNumeroSorte(), 0.01);
     }
     @Test
-    public void testaGetNumeroSorteComNascimentoBissextoVida70(){
-        Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
-        dwarf.levaFlechada();
-        dwarf.levaFlechada();
-        dwarf.levaFlechada();
-        dwarf.levaFlechada();
+    public void testaGetNumeroSorteComNascimentoBissextoVida100(){
+        Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));        
+        dwarf.levaFlechada();        
         assertEquals((101.0), dwarf.getNumeroSorte(), 0.01);
     }
     @Test
@@ -90,4 +87,58 @@ public class DwarfTest
         Dwarf dwarf = new Dwarf("Meireles", new DataTerceiraEra(1,1,2016));
         assertEquals((101.0), dwarf.getNumeroSorte(), 0.01);
     }
+    @Test
+    public void criaDwarfNascimentoBissextoLeva3Fechadas(){
+        Dwarf anao = new Dwarf("Nome", new DataTerceiraEra(1,1,2016));
+        for(int i=0; i<3; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(anao.getVida(), 90);
+        assertEquals(anao.getExperiencia(), 2);
+    }
+    @Test
+    public void criaDwarfNascimentoBissextoLeva5Fechadas(){
+        Dwarf anao = new Dwarf("Nome", new DataTerceiraEra(1,1,2016));
+        for(int i=0; i<5; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(anao.getVida(), 90);
+        assertEquals(anao.getExperiencia(), 6);
+    }
+    @Test
+    public void criaDwarfNascimentoNaoBissextoNomeSeixasLeva3Fechadas(){
+        Dwarf anao = new Dwarf("Seixas", new DataTerceiraEra(1,1,2015));
+        for(int i=0; i<3; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(anao.getVida(), 110);
+        assertEquals(anao.getExperiencia(), 0);
+    }
+    @Test
+    public void criaDwarfNascimentoNaoBissextoNomeMeirelesLeva5Fechadas(){
+        Dwarf anao = new Dwarf("Meireles", new DataTerceiraEra(1,1,2015));
+        for(int i=0; i<5; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(anao.getVida(), 110);
+        assertEquals(anao.getExperiencia(), 0);
+    }
+    @Test
+    public void criaDwarfNascimentoBissextoNomeSeixasLeva2Fechadas(){
+        Dwarf anao = new Dwarf("Seixas", new DataTerceiraEra(1,1,2016));
+        for(int i=0; i<2; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(90, anao.getVida());
+        assertEquals(anao.getExperiencia(), 0);
+    }
+    @Test
+    public void criaDwarfNascimentoBissextoNomeMeirelesLeva2Fechadas(){
+        Dwarf anao = new Dwarf("Meireles", new DataTerceiraEra(1,1,2016));
+        for(int i=0; i<2; i++){
+            anao.levaFlechada();
+        }
+        assertEquals(90, anao.getVida());
+        assertEquals(anao.getExperiencia(), 0);
+    }    
 }
