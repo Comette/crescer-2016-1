@@ -14,4 +14,7 @@ public class Inventario
     public int getQuantidadeItens(){
         return itens.size();
     }
+    public boolean verificaItem(Item item){
+        return itens.contains(item);
+    }
 }
