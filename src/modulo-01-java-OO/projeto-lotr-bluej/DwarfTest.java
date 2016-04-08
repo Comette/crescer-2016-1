@@ -63,4 +63,31 @@ public class DwarfTest
         dwarf.perdeItem(item);
         assertFalse(dwarf.possuiItem(item));
     }
+    @Test
+    public void testaGetNumeroSorteComNascimentoBissextoVida80(){
+        Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
+        dwarf.levaFlechada();
+        dwarf.levaFlechada();
+        dwarf.levaFlechada();
+        assertEquals((-3333), dwarf.getNumeroSorte(), 0.01);
+    }
+    @Test
+    public void testaGetNumeroSorteComNascimentoBissextoVida70(){
+        Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
+        dwarf.levaFlechada();
+        dwarf.levaFlechada();
+        dwarf.levaFlechada();
+        dwarf.levaFlechada();
+        assertEquals((101.0), dwarf.getNumeroSorte(), 0.01);
+    }
+    @Test
+    public void testaGetNumeroSorteComNascimentoNaoBissextoNomeSeixas(){
+        Dwarf dwarf = new Dwarf("Seixas", new DataTerceiraEra(1,1,2015));
+        assertEquals((33.0), dwarf.getNumeroSorte(), 0.01);
+    }
+    @Test
+    public void testaGetNumeroSorteComNascimentoBissextoNomeMeireles(){
+        Dwarf dwarf = new Dwarf("Meireles", new DataTerceiraEra(1,1,2016));
+        assertEquals((101.0), dwarf.getNumeroSorte(), 0.01);
+    }
 }

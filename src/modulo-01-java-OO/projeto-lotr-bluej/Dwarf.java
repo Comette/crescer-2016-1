@@ -49,4 +49,14 @@ public class Dwarf
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
+    public double getNumeroSorte(){
+        double valorRetornar = 101.0;
+        if(dataNascimento.ehBissexto() && vida >= 80 && vida <= 90){
+            return valorRetornar * (-33);
+        }
+        if(!dataNascimento.ehBissexto() && (nome.equals("Seixas") || nome.equals("Meireles"))){
+            return ((valorRetornar * 33) % 100);
+        }
+        return valorRetornar;
+    }
 }
