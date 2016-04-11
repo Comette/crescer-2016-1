@@ -56,6 +56,9 @@ public class Dwarf
     public boolean possuiItem(Item item){
         return bolsa.verificaItem(item);
     }
+    public Inventario getInventario(){
+        return bolsa;
+    }
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
@@ -73,8 +76,5 @@ public class Dwarf
         if(getNumeroSorte() == -3333.0){
             bolsa.adiciona1000Unidades();
         }
-    }
-    public Item getItemMaisPopular(){
-        return bolsa.itemMaisPopular();
-    }
+    }    
 }

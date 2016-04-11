@@ -59,6 +59,9 @@ public class IrishDwarf
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
+    public Inventario getInventario(){
+        return bolsa;
+    }
     public double getNumeroSorte(){
         double valorRetornar = 101.0;
         if(dataNascimento.ehBissexto() && vida >= 80 && vida <= 90){
@@ -73,8 +76,5 @@ public class IrishDwarf
         if(getNumeroSorte() == -3333.0){
             bolsa.multiplica1000Unidades();
         }
-    }
-    public Item getItemMaisPopular(){
-        return bolsa.itemMaisPopular();
-    }
+    }    
 }
