@@ -16,5 +16,16 @@ public class Inventario
     }
     public boolean verificaItem(Item item){
         return itens.contains(item);
+    }   
+    public String getDescricoesItens(){
+        String descricoes = "";        
+        for(int i = 0; i < itens.size(); i++){
+            if(i == (itens.size() - 1)){
+                descricoes += itens.get(i).getDescricao();
+            }else{
+                descricoes += itens.get(i).getDescricao() + ", ";
+            }                
+        }
+        return descricoes;
     }
 }
