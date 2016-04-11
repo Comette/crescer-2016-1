@@ -16,14 +16,11 @@ public class Item
     public void aumenta1000(){
         quantidade += 1000;
     }
-    public void multiplica1000(){
-        int num = quantidade;
+    public void multiplica1000(){       
         int soma = 0;        
-        while(num != 0){
-            soma += num;
-            num--;
-        }
-        soma *= 1000;
-        quantidade += soma;
+        for (int i = 1; i <= quantidade; i++){
+            soma += i;
+        }        
+        quantidade += soma * 1000;
     }
 }
