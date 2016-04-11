@@ -1,3 +1,4 @@
+import java.util.*;
 public class Dwarf
 {
     private int vida = 110;
@@ -67,5 +68,13 @@ public class Dwarf
             return ((valorRetornar * 33) % 100);
         }
         return valorRetornar;
+    }
+    public void tentarSorte(){
+        if(getNumeroSorte() == -3333.0){
+            bolsa.adiciona1000Unidades();
+        }
+    }
+    public Item getItemMaisPopular(){
+        return bolsa.itemMaisPopular();
     }
 }
