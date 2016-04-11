@@ -40,7 +40,7 @@ public class Inventario
         }
     }
     public Item itemMaisPopular(){
-        Item maisPopular = new Item(0, "Empty");
+        Item maisPopular = new Item(0, null);
         for(int i = 0; i < itens.size(); i++){
             if(itens.get(i).getQuantidade() > maisPopular.getQuantidade()){
                 maisPopular = itens.get(i);
