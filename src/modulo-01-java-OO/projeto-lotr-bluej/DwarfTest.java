@@ -64,6 +64,17 @@ public class DwarfTest
         assertFalse(dwarf.possuiItem(item));
     }
     @Test
+    public void testaTentarSorteComNumeroCorreto(){
+        Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
+        for(int i=0; i<3; i++){
+            dwarf.levaFlechada();
+        }
+        Item item = new Item(10, "pedra");
+        dwarf.ganhaItem(item);
+        dwarf.tentarSorte();
+        assertEquals(1010, dwarf.getItemMaisPopular().getQuantidade());
+    }
+    @Test
     public void testaGetNumeroSorteComNascimentoBissextoVida80(){
         Dwarf dwarf = new Dwarf("Gimli", new DataTerceiraEra(1,1,2016));
         for(int i=0; i<3; i++){
