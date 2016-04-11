@@ -37,4 +37,10 @@ public class ElfoTest
         String correta = "Legolas possui 1 flecha e 0 níveis de experiência.";                
         assertEquals(correta, elfo.toString());        
     }
+    @Test
+    public void testaElfoNasceVivoCom100Vida(){
+        Elfo elfo = new Elfo("Legolas");               
+        assertEquals(Status.VIVO, elfo.getStatus());
+        assertEquals(100, elfo.getVida());
+    }
 }

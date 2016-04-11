@@ -3,11 +3,16 @@ public class Personagem
     protected String nome;
     protected int experiencia;
     protected Inventario bolsa = new Inventario();
+    protected Status status = Status.VIVO;
+    protected int vida = 110;
     public Personagem(String nome){
         this.nome = nome;
     }    
     public String getNome(){
         return this.nome;
+    }
+    public int getVida(){
+        return vida;
     }
     public int getExperiencia(){
         return experiencia;
@@ -23,5 +28,8 @@ public class Personagem
     }
     public Inventario getInventario(){
         return bolsa;
+    }
+    public Status getStatus(){
+        return status;
     }
 }

@@ -1,8 +1,6 @@
 import java.util.*;
 public class Dwarf extends Personagem
-{
-    private int vida = 110;
-    private Status status = Status.VIVO;
+{    
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);    
     public Dwarf(String nome)
     {        
@@ -27,13 +25,7 @@ public class Dwarf extends Personagem
                 status = Status.MORTO;
             }
         }
-    }    
-    public int getVida(){
-        return vida;
-    }
-    public Status getStatus(){
-        return status;
-    }     
+    }         
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
