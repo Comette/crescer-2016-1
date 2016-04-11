@@ -24,4 +24,29 @@ public class HobbitContador
         }
         return mmc;    
     }
+    // erros: metodo retornara um array e não um int; 
+    // metodo recebia uma variavel não utilizada e utilizava uma variavel não instanciada;
+    // metodo criava um array desnecessário
+    public int obterMaiorMultiploDeTresAte(int numero){
+        int maiorMultiplo=0;
+        for (int i = numero; i >= 3; i--){
+            if(i%3==0){
+                maiorMultiplo = i;
+                break;
+            }
+        }
+        return maiorMultiplo;
+    }
+    //erros: metodo recebia uma variavel não utilizada e utilizava uma variavel não instanciada;
+    // instanciava arrayList<> com atribuição da primeira posicao desnecessariamente;
+    // metodo tinha um break antes de adicionar o numero no array de retorno;
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero){
+        ArrayList<Integer> multiplos = new ArrayList<>();
+        for (int i = 1; i <= numero; i++){
+            if(i%3==0){
+                multiplos.add(i);
+            }
+        }
+        return multiplos;
+    }
 }
