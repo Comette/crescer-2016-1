@@ -15,8 +15,7 @@ public class IrishDwarfTest
         }
         Item item = new Item(4, "pedra");
         irish.ganhaItem(item);
-        irish.tentarSorte();
-        Item unico = irish.getItemMaisPopular();
-        assertEquals(10004, unico.getQuantidade());
+        irish.tentarSorte();        
+        assertEquals(10004, irish.getInventario().getItemNoInventario(0).getQuantidade());
     } 
 }

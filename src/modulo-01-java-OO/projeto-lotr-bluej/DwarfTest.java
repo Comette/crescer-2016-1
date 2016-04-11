@@ -72,7 +72,7 @@ public class DwarfTest
         Item item = new Item(10, "pedra");
         dwarf.ganhaItem(item);
         dwarf.tentarSorte();
-        assertEquals(1010, dwarf.getItemMaisPopular().getQuantidade());
+        assertEquals(1010, dwarf.getInventario().getItemNoInventario(0).getQuantidade());
     }
     @Test
     public void testaGetNumeroSorteComNascimentoBissextoVida80(){
