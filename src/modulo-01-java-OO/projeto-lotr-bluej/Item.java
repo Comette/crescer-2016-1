@@ -13,4 +13,17 @@ public class Item
     public String getDescricao(){
         return descricao;
     }
+    public void aumenta1000(){
+        quantidade += 1000;
+    }
+    public void multiplica1000(){
+        int num = quantidade;
+        int soma = 0;        
+        while(num != 0){
+            soma += num;
+            num--;
+        }
+        soma *= 1000;
+        quantidade += soma;
+    }
 }
