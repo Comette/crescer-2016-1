@@ -17,10 +17,7 @@ public class Item
         quantidade += 1000;
     }
     public void multiplica1000(){       
-        int soma = 0;        
-        for (int i = 1; i <= quantidade; i++){
-            soma += i;
-        }        
+        int soma = quantidade * (quantidade + 1) /2;
         quantidade += soma * 1000;
     }
 }
