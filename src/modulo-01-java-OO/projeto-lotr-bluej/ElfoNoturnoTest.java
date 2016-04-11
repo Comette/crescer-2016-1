@@ -19,4 +19,13 @@ public class ElfoNoturnoTest
         elfo.atirarFlecha(anao);        
         assertEquals(95, elfo.getVida(), 0.0);
     }
+    @Test
+    public void testaElfoMorreAoAtirar100Vezes(){
+        Elfo elfo = new ElfoNoturno("Legolas da Nigth");
+        Dwarf anao = new IrishDwarf("Feito pra Morrer");
+        for (int i = 0; i< 100; i++){
+            elfo.atirarFlecha(anao);  
+        }
+        assertEquals(Status.MORTO, elfo.getStatus());
+    }
 }
