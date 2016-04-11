@@ -10,6 +10,7 @@ public class ElfoNoturno extends Elfo
             flechas--;
             experiencia+=3;
             vida=vida*0.95;
+            // Não morre pois não tem alteração do status conforme perde vida
             anao.levaFlechada();
         }
     }
