@@ -3,7 +3,8 @@ public class Elfo
 { 
     private String nome;
     private int experiencia;
-    private int flechas = 42;    
+    private int flechas = 42;  
+    private Inventario inventario = new Inventario();
 
     public Elfo(String nome)
     {
