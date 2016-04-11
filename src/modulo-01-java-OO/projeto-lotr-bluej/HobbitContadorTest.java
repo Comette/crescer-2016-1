@@ -16,4 +16,15 @@ public class HobbitContadorTest
         int esperado = 840;
         assertEquals(esperado, contador.calcularDiferenca(arrayPares));
     }
+    @Test
+    public void testaCalcularDiferenca2(){
+        ArrayList<ArrayList<Integer>> arrayPares = new ArrayList<>();
+        arrayPares.add(new ArrayList<>(Arrays.asList(20, 10)));
+        arrayPares.add(new ArrayList<>(Arrays.asList(9, 12)));
+        arrayPares.add(new ArrayList<>(Arrays.asList(30, 9)));
+        arrayPares.add(new ArrayList<>(Arrays.asList(6, 8)));
+        HobbitContador contador = new HobbitContador();
+        int esperado = 456;
+        assertEquals(esperado, contador.calcularDiferenca(arrayPares));
+    }
 }
