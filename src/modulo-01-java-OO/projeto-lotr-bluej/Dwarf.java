@@ -1,20 +1,16 @@
 import java.util.*;
-public class Dwarf
+public class Dwarf extends Personagem
 {
     private int vida = 110;
-    private int experiencia;
-    private String nome;
     private Status status = Status.VIVO;
-    protected Inventario bolsa = new Inventario();
-    private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
-    
+    private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);    
     public Dwarf(String nome)
     {        
-        this.nome = nome;        
+        super(nome);        
     }
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {        
-        this(nome);
+        super(nome);
         this.dataNascimento = dataNascimento;
     }
     public void levaFlechada(){
@@ -31,34 +27,13 @@ public class Dwarf
                 status = Status.MORTO;
             }
         }
-    }
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    public String getNome(){
-        return this.nome;
-    }
+    }    
     public int getVida(){
         return vida;
     }
     public Status getStatus(){
         return status;
-    }
-    public int getExperiencia(){
-        return experiencia;
-    }
-    public void ganhaItem(Item item){
-        bolsa.adicionaItem(item);
-    }
-    public void perdeItem(Item item){
-        bolsa.removeItem(item);
-    }
-    public boolean possuiItem(Item item){
-        return bolsa.verificaItem(item);
-    }
-    public Inventario getInventario(){
-        return bolsa;
-    }
+    }     
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
