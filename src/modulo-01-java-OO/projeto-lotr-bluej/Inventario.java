@@ -1,9 +1,7 @@
 import java.util.*;
 public class Inventario
 {
-    private ArrayList<Item> itens = new ArrayList<>();
-    public Inventario(){
-    }
+    private ArrayList<Item> itens = new ArrayList<>();    
     public void adicionaItem(Item item){
         itens.add(item);
     }
@@ -17,6 +15,9 @@ public class Inventario
     public boolean verificaItem(Item item){
         return itens.contains(item);
     }   
+    public Item getItemNoInventario(int index){
+        return itens.get(index);
+    }                
     public String getDescricoesItens(){
         String descricoes = "";        
         for(int i = 0; i < itens.size(); i++){
