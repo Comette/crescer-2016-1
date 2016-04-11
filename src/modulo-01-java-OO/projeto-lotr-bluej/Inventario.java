@@ -28,4 +28,14 @@ public class Inventario
         }
         return descricoes;
     }
+    public void adiciona1000Unidades(){
+        for(int i = 0; i < itens.size(); i++){
+            itens.get(i).aumenta1000();
+        }
+    }
+    public void multiplica1000Unidades(){
+        for(int i = 0; i < itens.size(); i++){
+            itens.get(i).multiplica1000();
+        }
+    }
 }
