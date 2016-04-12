@@ -20,4 +20,8 @@ public class Item
         int soma = quantidade * (quantidade + 1) /2;
         quantidade += soma * 1000;
     }
+    public boolean equals(Object obj){
+        Item outro = (Item)obj;
+        return (this.quantidade == outro.getQuantidade() && this.descricao.equals(outro.getDescricao()));
+    }
 }
