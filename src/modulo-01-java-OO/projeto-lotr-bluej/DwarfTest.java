@@ -46,7 +46,7 @@ public class DwarfTest
         for(int i=0; i<12; i++){
             dwarf.levaFlechada();
         }
-        assertEquals(0, dwarf.getVida(), 0.0);
+        assertEquals(0, dwarf.getVida(), 0.0001);
     }
     @Test
     public void testaGanharItem10Pedras(){
@@ -104,7 +104,7 @@ public class DwarfTest
         for(int i=0; i<3; i++){
             anao.levaFlechada();
         }
-        assertEquals(anao.getVida(), 90, 0.0);
+        assertEquals(anao.getVida(), 90, 0.0001);
         assertEquals(anao.getExperiencia(), 2);
     }
     @Test
@@ -113,7 +113,7 @@ public class DwarfTest
         for(int i=0; i<5; i++){
             anao.levaFlechada();
         }
-        assertEquals(anao.getVida(), 90, 0.0);
+        assertEquals(anao.getVida(), 90, 0.0001);
         assertEquals(anao.getExperiencia(), 6);
     }
     @Test
@@ -122,7 +122,7 @@ public class DwarfTest
         for(int i=0; i<3; i++){
             anao.levaFlechada();
         }
-        assertEquals(anao.getVida(), 110, 0.0);
+        assertEquals(anao.getVida(), 110, 0.0001);
         assertEquals(anao.getExperiencia(), 0);
     }
     @Test
@@ -131,7 +131,7 @@ public class DwarfTest
         for(int i=0; i<5; i++){
             anao.levaFlechada();
         }
-        assertEquals(anao.getVida(), 110, 0.0);
+        assertEquals(anao.getVida(), 110, 0.0001);
         assertEquals(anao.getExperiencia(), 0);
     }
     @Test
@@ -140,7 +140,7 @@ public class DwarfTest
         for(int i=0; i<2; i++){
             anao.levaFlechada();
         }
-        assertEquals(90, anao.getVida(), 0.0);
+        assertEquals(90, anao.getVida(), 0.0001);
         assertEquals(anao.getExperiencia(), 0);
     }
     @Test
@@ -149,7 +149,7 @@ public class DwarfTest
         for(int i=0; i<2; i++){
             anao.levaFlechada();
         }
-        assertEquals(90, anao.getVida(), 0.0);
+        assertEquals(90, anao.getVida(), 0.0001);
         assertEquals(anao.getExperiencia(), 0);
     }    
 }

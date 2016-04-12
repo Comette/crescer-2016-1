@@ -41,6 +41,6 @@ public class ElfoTest
     public void testaElfoNasceVivoCom100Vida(){
         Elfo elfo = new Elfo("Legolas");               
         assertEquals(Status.VIVO, elfo.getStatus());
-        assertEquals(100, elfo.getVida(),0.0);
+        assertEquals(100, elfo.getVida(), 0.0001);
     }
 }

@@ -1,17 +1,16 @@
-
 public class Elfo extends Personagem
 { 
     protected int flechas = 42;  
     public Elfo(String nome)
     {
         super(nome); 
-        vida = 100;
+        vida = 100.0;
     }
     public Elfo (String nome, int flechas)
     {
         super(nome);
         this.flechas = flechas;
-        vida = 100;
+        vida = 100.0;
     }    
     public void atirarFlecha(Dwarf anao)
     {

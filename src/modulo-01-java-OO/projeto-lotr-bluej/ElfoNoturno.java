@@ -1,9 +1,10 @@
 public class ElfoNoturno extends Elfo
 {
-    private double penalidadeVida;
     public ElfoNoturno(String nome){
         super(nome);
-        penalidadeVida = vida*0.05;
+    }
+    public ElfoNoturno(String nome, int flechas){
+        super(nome, flechas);
     }
     @Override
     public void atirarFlecha(Dwarf anao)
@@ -11,8 +12,9 @@ public class ElfoNoturno extends Elfo
         if (flechas > 0){
             flechas--;
             experiencia+=3;
-            vida-=penalidadeVida;
-            if(vida <= 0){status = Status.MORTO;}
+            double percentual = 0.05;
+            vida = vida - (vida * percentual);
+            if(vida < 1){status = Status.MORTO;}
             anao.levaFlechada();
         }
     }
