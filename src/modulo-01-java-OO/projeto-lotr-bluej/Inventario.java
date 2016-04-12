@@ -49,36 +49,10 @@ public class Inventario
         return maisPopular;
     }
     public void ordenarItens(){
-        ArrayList<Item> listaOrdenada = new ArrayList<>();       
-        for (int i = 0; i < itens.size(); i++){
-            if(listaOrdenada.isEmpty() || itens.get(i).getQuantidade() <= listaOrdenada.get(0).getQuantidade()){
-                listaOrdenada.add(0, itens.get(i));
-            }else{
-                for(int j = 1; j < listaOrdenada.size(); j++){
-                    if(itens.get(i).getQuantidade() <= listaOrdenada.get(j).getQuantidade()){
-                        listaOrdenada.add(j, itens.get(i));
-                        break;
-                    }
-                }
+        Collections.sort(this.itens, new Comparator<Item>(){
+            public int compare(Item item1, Item item2) {
+                return Integer.compare(item1.getQuantidade(), item2.getQuantidade());
             }
-        }
-        itens = listaOrdenada;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-            
+        });       
+    }            
 }

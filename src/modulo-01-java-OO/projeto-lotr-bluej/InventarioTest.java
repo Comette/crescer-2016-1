@@ -84,4 +84,20 @@ public class InventarioTest
         
         assertTrue(esperado.equals(bolsa.getDescricoesItens()));
     }
+    @Test
+    public void ordenarItensBaguncados(){
+        // Arrange
+        Inventario mochila = new Inventario();
+        Item elderScroll = new Item(9, "Elder Scroll");
+        Item escudo = new Item(99, "Escudo");
+        Item canivete = new Item(2, "Canivete suíço");
+        mochila.adicionaItem(elderScroll);
+        mochila.adicionaItem(escudo);
+        mochila.adicionaItem(canivete); 
+        String esperado = "Canivete suíço, Elder Scroll, Escudo";
+        // Act
+        mochila.ordenarItens();
+        // Assert
+        assertTrue(esperado.equals(mochila.getDescricoesItens()));
+    }
 }
