@@ -100,4 +100,28 @@ public class InventarioTest
         // Assert
         assertTrue(esperado.equals(mochila.getDescricoesItens()));
     }
+    @Test
+    public void testaEqualsComObjetosIguais(){
+        Inventario i1 = new Inventario();
+        i1.adicionaItem(new Item(10, "pedra"));
+        i1.adicionaItem(new Item(15, "canivete"));
+        i1.adicionaItem(new Item(8, "pocao"));
+        Inventario i2 = new Inventario();
+        i2.adicionaItem(new Item(10, "pedra"));
+        i2.adicionaItem(new Item(15, "canivete"));
+        i2.adicionaItem(new Item(8, "pocao"));
+        assertTrue(i1.equals(i2));
+    }
+    @Test
+    public void testaEqualsComObjetosDiferentes(){
+        Inventario i1 = new Inventario();
+        i1.adicionaItem(new Item(15, "canivete"));
+        i1.adicionaItem(new Item(10, "pedra"));        
+        i1.adicionaItem(new Item(8, "pocao"));
+        Inventario i2 = new Inventario();
+        i2.adicionaItem(new Item(8, "pocao"));
+        i2.adicionaItem(new Item(10, "pedra"));
+        i2.adicionaItem(new Item(15, "canivete"));        
+        assertFalse(i1.equals(i2));
+    }
 }

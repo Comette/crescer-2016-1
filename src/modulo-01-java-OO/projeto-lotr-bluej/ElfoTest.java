@@ -2,9 +2,16 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 public class ElfoTest
 {
+    @Test
+    public void testaContadorDeElfosCom3Elfos(){
+        int esperado = Personagem.getQuantidadeElfos()+3;
+        Elfo e1 = new Elfo("Legolas");        
+        Elfo e2 = new ElfoVerde("Legolas");        
+        Elfo e3 = new ElfoNoturno("Legolas");        
+        assertEquals(esperado, Personagem.getQuantidadeElfos());        
+    }
     @Test
     public void criaElfoComNomeFlechasDefault(){
         Elfo elfo = new Elfo("Legolas");
@@ -43,4 +50,5 @@ public class ElfoTest
         assertEquals(Status.VIVO, elfo.getStatus());
         assertEquals(100, elfo.getVida(), 0.0001);
     }
+    
 }

@@ -54,5 +54,10 @@ public class Inventario
                 return Integer.compare(item1.getQuantidade(), item2.getQuantidade());
             }
         });       
-    }            
+    }    
+    public boolean equals(Object obj){
+        Inventario outro = (Inventario)obj;
+        boolean saoIguais = this.itens.equals(outro.itens);
+        return saoIguais;
+    }
 }
