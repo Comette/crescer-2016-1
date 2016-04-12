@@ -151,5 +151,33 @@ public class DwarfTest
         }
         assertEquals(90, anao.getVida(), 0.0001);
         assertEquals(anao.getExperiencia(), 0);
-    }    
+    }
+    @Test
+    public void decobrirVidaComDoisIguais(){
+        Dwarf d1 = new Dwarf("zangado");
+        Dwarf d2 = new Dwarf("soneca");
+        assertEquals(d2, Dwarf.descobreMenosVida(d1, d2));        
+    }
+    @Test
+    public void decobrirVidaComPrimeiroMenor(){
+        Dwarf d1 = new Dwarf("zangado");
+        d1.levaFlechada();
+        Dwarf d2 = new Dwarf("soneca");
+        assertEquals(d1, Dwarf.descobreMenosVida(d1, d2)); 
+    }
+    @Test
+    public void decobrirVidaComPrimeiroMaior(){
+        Dwarf d1 = new Dwarf("zangado");
+        Dwarf d2 = new Dwarf("soneca");
+        d2.levaFlechada();
+        assertEquals(d2, Dwarf.descobreMenosVida(d1, d2)); 
+    }
 }
+
+
+
+
+
+
+
+
