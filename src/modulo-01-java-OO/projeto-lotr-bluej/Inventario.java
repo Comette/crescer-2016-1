@@ -57,7 +57,23 @@ public class Inventario
     }    
     public boolean equals(Object obj){
         Inventario outro = (Inventario)obj;
-        boolean saoIguais = this.itens.equals(outro.itens);
+        boolean saoIguais=false;
+        if(this.itens.isEmpty() && outro.itens.isEmpty()){
+            saoIguais = true;
+        }else if(this.itens.isEmpty() && !outro.itens.isEmpty() || !this.itens.isEmpty() && outro.itens.isEmpty()){
+            saoIguais = false;
+        }else{
+            saoIguais = this.itens.equals(outro.itens);
+        }
         return saoIguais;
     }
 }
+
+
+
+
+
+
+
+
+
