@@ -202,4 +202,29 @@ public class InventarioTest
         //Assert
         assertEquals(esperado, obtido);
     }
+    @Test
+    public void testaEqualsComDoisObjetosVazios(){
+        //Arrange
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();       
+        boolean esperado = true;
+        //Act
+        boolean obtido = i1.equals(i2);
+        //Assert
+        assertEquals(esperado, obtido);
+    }
+    @Test
+    public void testaEqualsComUmObjetoVazio(){
+        //Arrange
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        i2.adicionaItem(new Item(8, "pocao"));
+        i2.adicionaItem(new Item(10, "pedra"));
+        i2.adicionaItem(new Item(15, "canivete"));
+        boolean esperado = false;
+        //Act
+        boolean obtido = i1.equals(i2);
+        //Assert
+        assertEquals(esperado, obtido);
+    }
 }
