@@ -5,83 +5,149 @@ import org.junit.Test;
 import java.util.*;
 public class InventarioTest
 {
+    //TESTES adicionaItem()
     @Test
     public void testaAdicionar3Itens(){
-        Inventario bolsa = new Inventario();
-        
+        //Arrange
+        Inventario bolsa = new Inventario();        
         Item i1 = new Item(10, "pedra");
         Item i2 = new Item(15, "corda");
         Item i3 = new Item(16, "pocao");
-                
+        //Act        
         bolsa.adicionaItem(i1);
         bolsa.adicionaItem(i2);
         bolsa.adicionaItem(i3);
-        
+        //Assert
         assertEquals(3, bolsa.getQuantidadeItens());
     }
     @Test
-    public void testaAdiciona3ItensERemove2(){
-        Inventario bolsa = new Inventario();
-        
+    public void testaAdicionar3ItensIguais(){
+        //Arrange
+        Inventario bolsa = new Inventario();        
         Item i1 = new Item(10, "pedra");
-        Item i2 = new Item(15, "corda");
-        Item i3 = new Item(16, "pocao");
-        
+        Item i2 = new Item(10, "pedra");
+        Item i3 = new Item(10, "pedra");
+        //Act       
         bolsa.adicionaItem(i1);
         bolsa.adicionaItem(i2);
         bolsa.adicionaItem(i3);
-        
+        //Assert
+        assertEquals(3, bolsa.getQuantidadeItens());
+    }
+    
+    //TESTES removeItem()
+    @Test
+    public void testaAdiciona3ItensERemove2(){
+        //Arrange
+        Inventario bolsa = new Inventario();        
+        Item i1 = new Item(10, "pedra");
+        Item i2 = new Item(15, "corda");
+        Item i3 = new Item(16, "pocao");        
+        bolsa.adicionaItem(i1);
+        bolsa.adicionaItem(i2);
+        bolsa.adicionaItem(i3);
+        //Act
         bolsa.removeItem(i1);
         bolsa.removeItem(i2);   
-        
+        //Assert
         assertEquals(1, bolsa.getQuantidadeItens());
     }
     @Test
-    public void testaAdiciona3ItensEPegaDescricao(){
-        Inventario bolsa = new Inventario();
-        String esperado = "pedra, corda, pocao";
+    public void testaAdiciona3ItensERemove4(){
+        //Arrange
+        Inventario bolsa = new Inventario();        
         Item i1 = new Item(10, "pedra");
         Item i2 = new Item(15, "corda");
-        Item i3 = new Item(16, "pocao");
-        
+        Item i3 = new Item(16, "pocao");        
         bolsa.adicionaItem(i1);
         bolsa.adicionaItem(i2);
         bolsa.adicionaItem(i3);
-               
-        assertTrue(esperado.equals(bolsa.getDescricoesItens()));
+        //Act
+        bolsa.removeItem(i1);
+        bolsa.removeItem(i2);  
+        bolsa.removeItem(i3);
+        bolsa.removeItem(i3);
+        //Assert
+        assertEquals(0, bolsa.getQuantidadeItens());
     }
+    
+    //TESTES getDescricoesItens()
+    @Test
+    public void testaAdiciona3ItensEPegaDescricao(){
+        //Arrange
+        Inventario bolsa = new Inventario();        
+        Item i1 = new Item(10, "pedra");
+        Item i2 = new Item(15, "corda");
+        Item i3 = new Item(16, "pocao");        
+        bolsa.adicionaItem(i1);
+        bolsa.adicionaItem(i2);
+        bolsa.adicionaItem(i3);
+        String esperado = "pedra, corda, pocao";
+        //Act
+        String recebido = bolsa.getDescricoesItens();
+        //Assert
+        assertTrue(esperado.equals(recebido));
+    }
+    @Test
+    public void testaAdiciona3Itens1ComDescricaoVaziaEPegaDescricao(){
+        //Arrange
+        Inventario bolsa = new Inventario();        
+        Item i1 = new Item(10, "pedra");
+        Item i2 = new Item(15, "corda");
+        Item i3 = new Item(16, "");        
+        bolsa.adicionaItem(i1);
+        bolsa.adicionaItem(i2);
+        bolsa.adicionaItem(i3);
+        String esperado = "pedra, corda, ";
+        //Act
+        String recebido = bolsa.getDescricoesItens();
+        //Assert
+        assertTrue(esperado.equals(recebido));
+    }
+    
+    //TESTES itemMaisPopular()
     @Test
     public void testaItemMaisPopular(){
-        Inventario bolsa = new Inventario();
-        Item i1 = new Item(10, "pedra");
-        Item i2 = new Item(12, "corda");
+        Inventario bolsa = new Inventario(); 
         Item i3 = new Item(18, "pocao");
         
-        bolsa.adicionaItem(i1);
-        bolsa.adicionaItem(i2);
-        bolsa.adicionaItem(i3);
+        bolsa.adicionaItem(new Item(10, "pedra"));
+        bolsa.adicionaItem(new Item(12, "corda"));
+        bolsa.adicionaItem(new Item(18, "pocao"));
         
-        assertEquals(i3, bolsa.itemMaisPopular());
+        assertTrue(i3.equals(bolsa.itemMaisPopular()));
     }
     @Test
+    public void testaItemMaisPopularComItensDeMesmaDescricao(){
+        Inventario bolsa = new Inventario();        
+        Item i3 = new Item(18, "pedra");
+        
+        bolsa.adicionaItem(new Item (10, "pedra"));
+        bolsa.adicionaItem(new Item(12, "pedra"));
+        bolsa.adicionaItem(new Item(18, "pedra"));
+        
+        assertTrue(i3.equals(bolsa.itemMaisPopular()));
+    }
+    
+    //TESTES ordenaItens()
+    @Test
     public void testaOrdenacaocincoItens(){
+        //Arrange
         Inventario bolsa = new Inventario();
         Item i1 = new Item(18, "pedra");
         Item i2 = new Item(10, "corda");
         Item i3 = new Item(15, "pocao");
         Item i4 = new Item(12, "machado");
-        Item i5 = new Item(8, "picareta");
-        
+        Item i5 = new Item(8, "picareta");        
         bolsa.adicionaItem(i1);
         bolsa.adicionaItem(i2);
         bolsa.adicionaItem(i3);
         bolsa.adicionaItem(i4);
-        bolsa.adicionaItem(i5);
-        
+        bolsa.adicionaItem(i5);        
         String esperado = "picareta, corda, machado, pocao, pedra";
-        
+        //Act
         bolsa.ordenarItens();
-        
+        //Assert
         assertTrue(esperado.equals(bolsa.getDescricoesItens()));
     }
     @Test
@@ -100,8 +166,11 @@ public class InventarioTest
         // Assert
         assertTrue(esperado.equals(mochila.getDescricoesItens()));
     }
+    
+    //TESTES equals()
     @Test
     public void testaEqualsComObjetosIguais(){
+        //Arrange
         Inventario i1 = new Inventario();
         i1.adicionaItem(new Item(10, "pedra"));
         i1.adicionaItem(new Item(15, "canivete"));
@@ -110,10 +179,15 @@ public class InventarioTest
         i2.adicionaItem(new Item(10, "pedra"));
         i2.adicionaItem(new Item(15, "canivete"));
         i2.adicionaItem(new Item(8, "pocao"));
-        assertTrue(i1.equals(i2));
+        boolean esperado = true;
+        //Act        
+        boolean obtido = i1.equals(i2);
+        //Assert
+        assertEquals(esperado, obtido);
     }
     @Test
     public void testaEqualsComObjetosDiferentes(){
+        //Arrange
         Inventario i1 = new Inventario();
         i1.adicionaItem(new Item(15, "canivete"));
         i1.adicionaItem(new Item(10, "pedra"));        
@@ -122,6 +196,10 @@ public class InventarioTest
         i2.adicionaItem(new Item(8, "pocao"));
         i2.adicionaItem(new Item(10, "pedra"));
         i2.adicionaItem(new Item(15, "canivete"));        
-        assertFalse(i1.equals(i2));
+        boolean esperado = false;
+        //Act
+        boolean obtido = i1.equals(i2);
+        //Assert
+        assertEquals(esperado, obtido);
     }
 }

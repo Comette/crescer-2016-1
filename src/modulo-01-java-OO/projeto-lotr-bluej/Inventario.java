@@ -6,8 +6,7 @@ public class Inventario
         itens.add(item);
     }
     public void removeItem(Item item){
-        int posicao = itens.indexOf(item);
-        itens.remove(posicao);
+        itens.remove(item);
     }
     public int getQuantidadeItens(){
         return itens.size();
