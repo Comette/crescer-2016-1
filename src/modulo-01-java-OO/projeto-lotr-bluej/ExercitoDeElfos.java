@@ -1,9 +1,8 @@
 import java.util.*;
 public class ExercitoDeElfos
 {
-    HashMap<String, Elfo> exercitoDeElfos = new HashMap<>();  
-    HashMap<Status, ArrayList> exercitoDeElfosAgrupados = new HashMap<>();
-    ArrayList<Elfo> elfosVivos = new ArrayList<>();
+    private HashMap<String, Elfo> exercitoDeElfos = new HashMap<>();  
+    private HashMap<Status, ArrayList<Elfo>> exercitoDeElfosAgrupados = new HashMap<>();    
     public void alistaElfo(Elfo elfo){
         if(elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno){
             String key = elfo.getNome();
@@ -13,14 +12,15 @@ public class ExercitoDeElfos
     public Elfo buscaElfoPeloNome(String nome){
         return exercitoDeElfos.get(nome);    
     }
-    /*public void agrupaElfosPorStatus(){
-        for(Elfo elfo : exercitoDeElfos.valueSet()){
-            if(elfo.getStatus == Status.VIVO){    
-                elfosVivos.add(elfo);                
-            }else if(elfo.getStatus == Status.MORTO){
-                elfosMortos
+    public void agrupaElfosPorStatus(){
+        for(Elfo elfo : exercitoDeElfos.values()){
+            if(!exercitoDeElfosAgrupados.containsKey(elfo.getStatus())){
+                exercitoDeElfosAgrupados.put(elfo.getStatus(), new ArrayList<Elfo>());
+            }
+            exercitoDeElfosAgrupados.get(elfo.getStatus()).add(elfo);
         }
-        exercitoDeElffosAgrupado.put(Status.VIVO, elfosVivos);
-    }*/
-        
+    } 
+    public HashMap getExercitoAgrupado(){
+        return exercitoDeElfosAgrupados;
+    }
 }
