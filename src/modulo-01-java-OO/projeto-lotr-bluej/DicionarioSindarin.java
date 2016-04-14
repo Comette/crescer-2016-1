@@ -2,7 +2,17 @@ import java.util.*;
 public class DicionarioSindarin
 {
     public static void main(String[] args){
-        HashMap<String, String> dicionarioSindarin = new HashMap<>();
+        /*Scanner scanner =  new Scanner(System.in);
+        System.out.println("Bem vindo ao tradutor Sindarin! Escolha a Linguagem: ");
+        System.out.println("[P]ortugues - [I]ngles");
+        String idioma = scanner.nextline();
+        TradutorSindarin tradutor = creiarTradutor(indioma);
+        System.out.println("Digite a palavre a ser traduzida: ");
+        String palavra = scanner.nextLine();
+        System.out.println("A palavra " + palavra + " significa: " + tradutor.traduzir(palavra));
+               
+        
+        /*HashMap<String, String> dicionarioSindarin = new HashMap<>();
         //Inserir chave-valor
         dicionarioSindarin.put("terra", "amar");
         dicionarioSindarin.put("fogo", "naur"); 
@@ -23,6 +33,7 @@ public class DicionarioSindarin
         boolean contemChaveAgua = dicionarioSindarin.containsKey("água");
         // Contem valor?
         boolean contemValorNaur = dicionarioSindarin.containsValue("naur");
+        */
         
-    }
+    }    
 }
