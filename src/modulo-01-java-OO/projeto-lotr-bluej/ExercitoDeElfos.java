@@ -23,4 +23,7 @@ public class ExercitoDeElfos
     public HashMap getExercitoAgrupado(){
         return exercitoDeElfosAgrupados;
     }
+    public ArrayList<Elfo> buscarElfoPorStatus (Status status){
+        return exercitoDeElfosAgrupados.get(status);
+    }
 }
