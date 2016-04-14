@@ -13,6 +13,7 @@ public class ExercitoDeElfos
         return exercitoDeElfos.get(nome);    
     }
     public void agrupaElfosPorStatus(){
+        exercitoDeElfosAgrupados.clear();
         for(Elfo elfo : exercitoDeElfos.values()){
             if(!exercitoDeElfosAgrupados.containsKey(elfo.getStatus())){
                 exercitoDeElfosAgrupados.put(elfo.getStatus(), new ArrayList<Elfo>());
