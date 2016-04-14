@@ -4,26 +4,38 @@ import org.junit.Before;
 import org.junit.Test;
 public class ElfoVerdeTest
 {
+    //TESTES atirarFlecha()
     @Test
-    public void testaExperienciaDobrada(){
+    public void ganhaExperienciaDobradaAoAtirarFlecha(){
+        //Arrange
         Elfo verde = new ElfoVerde("Gafanhoto");
         Dwarf dwarf = new IrishDwarf("Gimli");
-        verde.atirarFlecha(dwarf);
         int experienciaEsperada = 2;
+        //Act
+        verde.atirarFlecha(dwarf);
+        //Assert
         assertEquals(experienciaEsperada, verde.getExperiencia());
-    }
+    }    
+    
+    //TESTES ganhaItem()
     @Test
-    public void testaGanhaItemErrado(){
+    public void ganhaItemErrado(){
+        //Arrange
         Elfo verde = new ElfoVerde("Gafanhoto");
-        verde.ganhaItem(new Item(10, "pedra"));
         Item itemEsperado = new Item(10, "pedra");
+        //Act
+        verde.ganhaItem(new Item(10, "pedra"));
+        //Assert
         assertFalse(verde.possuiItem(itemEsperado));
     }
     @Test
-    public void testaGanhaItemCerto(){
+    public void ganhaItemCerto(){
+        //Arrange
         Elfo verde = new ElfoVerde("Gafanhoto");
         Item itemEsperado = new Item(10, "Espada de aço valiriano");
+        //Act
         verde.ganhaItem(itemEsperado);        
+        //Assert
         assertTrue(verde.possuiItem(itemEsperado));
     }
 }

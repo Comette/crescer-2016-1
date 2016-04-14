@@ -19,8 +19,8 @@ public class ElfoVerde extends Elfo
     }
     @Override
     public void ganhaItem(Item item){
-        if(item.getDescricao().equals("Espada de aço valiriano") 
-        || item.getDescricao().equals("Arco e Flecha de Vidro")){
+        if(item.getDescricao().equals("Espada de aço valiriano") || 
+           item.getDescricao().equals("Arco e Flecha de Vidro")){
             bolsa.adicionaItem(item);
         }
     }
