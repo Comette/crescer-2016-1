@@ -32,9 +32,8 @@ public class ExercitoDeElfos
         if(estrategia == null){
             estrategia = new Estrategia30PorCento();
         }
-        agrupaElfosPorStatus();
         ArrayList<Elfo> retorno = new ArrayList<Elfo>();
-        for(Elfo elfo : buscarElfoPorStatus(Status.VIVO)){
+        for(Elfo elfo : exercitoDeElfos.values()){
             retorno.add(elfo);
         }
         estrategia.atacaHordaDwarves(retorno, hordaDwarves);
