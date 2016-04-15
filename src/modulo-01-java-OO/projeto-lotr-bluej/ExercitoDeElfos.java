@@ -42,6 +42,9 @@ public class ExercitoDeElfos
     public ArrayList<Elfo> getOrdemUltimoAtaque(){
         return estrategia.getOrdemUltimoAtaque();
     }
+    public void mudarEstrategia(Estrategia estrategia){
+        this.estrategia = estrategia;
+    }
 }
 
 
