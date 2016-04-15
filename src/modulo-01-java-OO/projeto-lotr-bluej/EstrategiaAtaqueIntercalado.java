@@ -2,18 +2,23 @@ import java.util.*;
 public class EstrategiaAtaqueIntercalado implements Estrategia
 {
     private ExercitoDeElfos exercito = new ExercitoDeElfos();
-    private Map<String, Elfo> ordemUltimoAtaque = new HashMap<String, Elfo>();  
+    private ArrayList<Elfo> ordemUltimoAtaque = new ArrayList<Elfo>();  
     private ArrayList<Elfo> elfosEmOrdem = new ArrayList<Elfo>();
     public void atacaHordaDwarves(ArrayList<Elfo> elfosQueAtacam, ArrayList<Dwarf> hordaDwarves){
         int elfosVerdes=0;
-        int elfosNoturnos=0;    
-                
-        for(Elfo elfo : elfosQueAtacam){
-            if(elfo.status != Status.VIVO){
-                elfosQueAtacam.remove(elfo);
-                continue;
+        int elfosNoturnos=0;               
+        //Elfo elfo : elfosQueAtacam)
+        for(int i = 0; i < elfosQueAtacam.size(); i++){
+            if(elfosQueAtacam.get(i).status != Status.VIVO){
+                elfosQueAtacam.remove(elfosQueAtacam.get(i));
+                int proximo = i + 1;
+                if(proximo < elfosQueAtacam.size()){
+                    continue;
+                }else{
+                    break;
+                }
             }
-            if(elfo instanceof ElfoVerde){
+            if(elfosQueAtacam.get(i) instanceof ElfoVerde){
                 elfosVerdes++;
             }else{
                 elfosNoturnos++;
@@ -22,20 +27,16 @@ public class EstrategiaAtaqueIntercalado implements Estrategia
         boolean podeAtacar = elfosVerdes == elfosNoturnos;
         if(podeAtacar){
             ordenaElfos(elfosQueAtacam);
-            for(Elfo elfo: elfosEmOrdem){            
+            for(int i = 0; i < elfosEmOrdem.size(); i++){            
                 for(Dwarf dwarf : hordaDwarves){
-                    elfo.atirarFlecha(dwarf);
-                    ordemUltimoAtaque.put(elfo.getNome(), elfo);
+                    elfosEmOrdem.get(i).atirarFlecha(dwarf);                    
                 }
+                ordemUltimoAtaque.add(elfosEmOrdem.get(i));
             }
         }
     }
-    public ArrayList<Elfo> getOrdemUltimoAtaque(){
-        ArrayList<Elfo> retorno = new ArrayList<Elfo>();
-        for(Elfo elfo : ordemUltimoAtaque.values()){
-            retorno.add(elfo);
-        }
-        return retorno;
+    public ArrayList<Elfo> getOrdemUltimoAtaque(){        
+        return ordemUltimoAtaque;
     }
     private void ordenaElfos(ArrayList<Elfo> elfosQueAtacam){
         int quantidadeElfos=elfosQueAtacam.size();
