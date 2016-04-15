@@ -27,4 +27,15 @@ public class ExercitoDeElfos
     public ArrayList<Elfo> buscarElfoPorStatus (Status status){
         return exercitoDeElfosAgrupados.get(status);
     }
+    
 }
+
+
+
+
+
+
+
+
+
+
