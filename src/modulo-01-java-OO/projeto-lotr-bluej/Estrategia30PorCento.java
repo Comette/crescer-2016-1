@@ -1,14 +1,9 @@
 import java.util.*;
 public class Estrategia30PorCento implements Estrategia
 {
-    private ExercitoDeElfos exercito;
-    private Map<String, Elfo> ordemUltimoAtaque = new HashMap<String, Elfo>();
-    public Estrategia30PorCento(ExercitoDeElfos exercito){
-        this.exercito = exercito;
-    }
-    public void atacaHordaDwarves(ArrayList<Dwarf> hordaDwarves){
-        exercito.agrupaElfosPorStatus();
-        ArrayList<Elfo> elfosQueAtacam = exercito.buscarElfoPorStatus(Status.VIVO);
+    private ExercitoDeElfos exercito = new ExercitoDeElfos();
+    private Map<String, Elfo> ordemUltimoAtaque = new HashMap<String, Elfo>();    
+    public void atacaHordaDwarves(ArrayList<Elfo> elfosQueAtacam, ArrayList<Dwarf> hordaDwarves){
         int intencoesAtaque = elfosQueAtacam.size() * hordaDwarves.size();
         int limiteElfosNoturnos = (int)(intencoesAtaque * 0.3);
         for(Elfo elfo : elfosQueAtacam){

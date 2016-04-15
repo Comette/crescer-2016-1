@@ -22,7 +22,7 @@ public class Estrategia30PorCentoTest
         hordaDwarves.add(new Dwarf("D4"));
         hordaDwarves.add(new Dwarf("D5"));
         hordaDwarves.add(new Dwarf("D6"));
-        Estrategia estrategia = new Estrategia30PorCento(exercito);
+        Estrategia estrategia = new Estrategia30PorCento();
         
         ArrayList<Elfo> esperado = new ArrayList<Elfo>();
         ElfoVerde ef1 = new ElfoVerde("EF1");
@@ -44,15 +44,15 @@ public class Estrategia30PorCentoTest
             en1C.atirarFlecha(new Dwarf("MorriMenos"));
         }
         //Act
-        estrategia.atacaHordaDwarves(hordaDwarves);
+        exercito.atacar(hordaDwarves);
         //Assert
-        assertTrue(estrategia.getOrdemUltimoAtaque().contains(ef1) &&
-                   estrategia.getOrdemUltimoAtaque().contains(ef2) &&
-                   estrategia.getOrdemUltimoAtaque().contains(ef3) &&
-                   (estrategia.getOrdemUltimoAtaque().contains(en1) &&
-                   estrategia.getOrdemUltimoAtaque().contains(en2)) ||
-                   (estrategia.getOrdemUltimoAtaque().contains(en1C) &&
-                   estrategia.getOrdemUltimoAtaque().contains(en2C))); 
+        assertTrue(exercito.getOrdemUltimoAtaque().contains(ef1));
+        assertTrue(exercito.getOrdemUltimoAtaque().contains(ef2));
+        assertTrue(exercito.getOrdemUltimoAtaque().contains(ef3));
+        assertTrue((exercito.getOrdemUltimoAtaque().contains(en1)) &&
+                   exercito.getOrdemUltimoAtaque().contains(en2) ||
+                   (exercito.getOrdemUltimoAtaque().contains(en1C) &&
+                   exercito.getOrdemUltimoAtaque().contains(en2C))); 
     }
 }
 
