@@ -4,10 +4,16 @@ public class Estrategia30PorCento implements Estrategia
     private ExercitoDeElfos exercito = new ExercitoDeElfos();
     private Map<String, Elfo> ordemUltimoAtaque = new HashMap<String, Elfo>();    
     public void atacaHordaDwarves(ArrayList<Elfo> elfosQueAtacam, ArrayList<Dwarf> hordaDwarves){
-        for(Elfo elfo : elfosQueAtacam){
-            if(elfo.status != Status.VIVO){
-                elfosQueAtacam.remove(elfo);
-            }
+        for(int i = 0; i < elfosQueAtacam.size(); i++){
+            if(elfosQueAtacam.get(i).status != Status.VIVO){
+                elfosQueAtacam.remove(elfosQueAtacam.get(i));
+                int proximo = i + 1;
+                if(proximo < elfosQueAtacam.size()){
+                    continue;
+                }else{
+                    break;
+                }
+            }                        
         }
         int intencoesAtaque = elfosQueAtacam.size() * hordaDwarves.size();
         int limiteElfosNoturnos = (int)(intencoesAtaque * 0.3);

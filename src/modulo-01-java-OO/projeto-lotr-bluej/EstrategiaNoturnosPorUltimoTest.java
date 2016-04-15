@@ -33,5 +33,5 @@ public class EstrategiaNoturnosPorUltimoTest
         assertTrue(exercito.getOrdemUltimoAtaque().get(2) instanceof ElfoVerde);
         assertTrue(exercito.getOrdemUltimoAtaque().get(3) instanceof ElfoNoturno);
         assertTrue(exercito.getOrdemUltimoAtaque().get(4) instanceof ElfoNoturno);
-    }
+    }    
 }
