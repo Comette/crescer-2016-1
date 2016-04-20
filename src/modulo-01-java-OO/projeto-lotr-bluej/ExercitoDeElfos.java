@@ -32,11 +32,11 @@ public class ExercitoDeElfos
         if(estrategia == null){
             estrategia = new Estrategia30PorCento();
         }
-        ArrayList<Elfo> retorno = new ArrayList<Elfo>();
+        ArrayList<Elfo> tropaElfos = new ArrayList<Elfo>();
         for(Elfo elfo : exercitoDeElfos.values()){
-            retorno.add(elfo);
+            tropaElfos.add(elfo);
         }
-        estrategia.atacaHordaDwarves(retorno, hordaDwarves);
+        estrategia.atacaHordaDwarves(tropaElfos, hordaDwarves);
     }
     public ArrayList<Elfo> getOrdemUltimoAtaque(){
         return estrategia.getOrdemUltimoAtaque();
