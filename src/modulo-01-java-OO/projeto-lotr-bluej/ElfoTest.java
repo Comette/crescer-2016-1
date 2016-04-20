@@ -6,11 +6,11 @@ public class ElfoTest
 {
     @Test
     public void testaContadorDeElfosCom3Elfos(){
-        int esperado = Personagem.getQuantidadeElfos()+3;
+        int esperado = Elfo.getQuantidadeElfos()+3;
         Elfo e1 = new Elfo("Legolas");        
         Elfo e2 = new ElfoVerde("Legolas");        
         Elfo e3 = new ElfoNoturno("Legolas");        
-        assertEquals(esperado, Personagem.getQuantidadeElfos());        
+        assertEquals(esperado, Elfo.getQuantidadeElfos());        
     }
     @Test
     public void criaElfoComNomeFlechasDefault(){

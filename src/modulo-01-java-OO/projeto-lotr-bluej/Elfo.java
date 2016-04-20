@@ -1,6 +1,7 @@
 public class Elfo extends Personagem
 { 
     protected int flechas = 42;  
+    protected static int quantidadeElfos;
     public Elfo(String nome)
     {
         super(nome); 
@@ -38,5 +39,10 @@ public class Elfo extends Personagem
         Elfo outro = (Elfo)obj;
         boolean saoIguais = super.equals(outro) && this.flechas == outro.flechas;
         return saoIguais;
+    }
+    
+    
+    public static int getQuantidadeElfos(){
+        return quantidadeElfos;
     }
 }

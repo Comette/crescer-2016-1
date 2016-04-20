@@ -4,8 +4,7 @@ public abstract class Personagem
     protected int experiencia;
     protected Inventario bolsa = new Inventario();
     protected Status status = Status.VIVO;
-    protected double vida = 110.0;
-    protected static int quantidadeElfos;
+    protected double vida = 110.0;    
     public Personagem(String nome){
         this.nome = nome;
     }    
@@ -32,9 +31,6 @@ public abstract class Personagem
     }
     public Status getStatus(){
         return status;
-    }
-    public static int getQuantidadeElfos(){
-        return quantidadeElfos;
     }
     public boolean equals(Object obj){
         Personagem outro = (Personagem)obj;
