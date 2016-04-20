@@ -4,7 +4,7 @@ public abstract class Personagem
     protected int experiencia;
     protected Inventario bolsa = new Inventario();
     protected Status status = Status.VIVO;
-    protected double vida = 110.0;    
+    protected double vida;    
     public Personagem(String nome){
         this.nome = nome;
     }    

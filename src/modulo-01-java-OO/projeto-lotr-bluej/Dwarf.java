@@ -4,12 +4,14 @@ public class Dwarf extends Personagem
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);    
     public Dwarf(String nome)
     {        
-        super(nome);        
+        super(nome); 
+        vida = 110.0;
     }
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {        
         super(nome);
         this.dataNascimento = dataNascimento;
+        vida = 110.0;
     }
     public void levaFlechada(){
         double numeroSorte = this.getNumeroSorte();
