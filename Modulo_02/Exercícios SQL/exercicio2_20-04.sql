@@ -1,4 +1,4 @@
-Select * from Cidade
+Select * from CidadeAux
 
 ---Questao 01
 select left(Nome, (CharIndex(' ', Nome) -1)) from Associado
@@ -34,10 +34,7 @@ select top 1 (IDCidade+1) as ProximoID from Cidade order by IDCidade desc
  
  ---Questao 10
  truncate table cidadeaux
- create table cidadeaux2 (IDcidade int identity not null, Nome varchar(90) not null, UF varchar(2) not null)
- insert into CidadeAux2 select distinct Nome, UF from Cidade
- insert into CidadeAux select IDCidade, Nome, UF from CidadeAux2
- drop table cidadeaux2
+ insert into CidadeAux (IDCidade, Nome, UF) select MIN(IDCidade), Nome, UF from Cidade group by Nome, UF
 
  ---Questao 11
  begin transaction
