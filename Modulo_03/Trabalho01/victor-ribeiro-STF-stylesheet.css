@@ -33,7 +33,7 @@ body {
             border-radius: 10px;
             padding-top: 12px;
         }
-        #menu-botao {
+        .menu-botao {
             text-decoration: none;
             color: white;
             font-weight: bold;
