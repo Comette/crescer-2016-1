@@ -1,0 +1,47 @@
+#menu-grande{
+  margin: 30px;
+  width: 100%;
+  height: 120px;
+  background-color: orange;
+
+}
+.menu-grande-content{
+  margin: 10px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  float: left;
+}
+#cx1{
+  left: 240px;
+}
+#cx3{
+  left: -240px;
+}
+#estatica{
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background-color: green;
+  z-index: 2;
+}
+#menu-pequeno{
+  margin: 30px;
+  width: 100%;
+  height: 1000px;
+  background-color: pink;
+}
+.menu-pequeno-content{
+  margin: 10px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: hotpink;
+  float: left;
+}
+.menu-pequeno-content:nth-child(4n+1){
+  clear: both;
+}
