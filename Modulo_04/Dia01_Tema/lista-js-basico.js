@@ -27,10 +27,10 @@ function gambi(instrutor) {
   console.log('olá querido instrutor: ', instrutor);
 }
 //----------04
-function somar(a) { 
+function somar(a) {
   return function (b) {
     return a+b;
-  }  
+  }
 }
 //----------05
 function fiboSum(informado) {
@@ -70,7 +70,9 @@ function contarPorTipo(objeto, tipoDesejado) {
   var contador = 0;
   if (tiposPossiveis.indexOf(tipoDesejado) > -1) {
     for (var tipo in objeto) {
-      if (typeof objeto[tipo] === tipoDesejado) {
+      if ((typeof objeto[tipo] === tipoDesejado)||
+      (tipoDesejado === 'null' && objeto[tipo] === null)||
+      (tipoDesejado === 'array' && objeto[tipo].constructor === Array)) {
         contador++;
       }
     }
