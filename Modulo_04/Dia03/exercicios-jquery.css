@@ -1,0 +1,40 @@
+*{
+    margin:0px;
+}
+header {
+    width: 100%;
+    height: 120px;
+    background-color: black;  
+    position: relative;  
+}
+header img{
+    left: 20px;
+    height: 90%;
+    position: absolute;
+}
+button {
+    position: relative;
+    margin: 15px auto;
+    display: block;
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
+#div-esquerda{
+    float: left;
+    position: relative;
+    width: 44.7%;
+    min-height: 500px;
+    margin-left: 5%;
+    background-color: rgba(200, 200, 200, 0.4);
+}
+#div-direita{
+    float: right;
+    position: relative;
+    width: 44.7%;
+    min-height: 500px;
+    margin-right: 5%;
+    background-color: rgba(200, 200, 200, 0.4);    
+}
