@@ -15,13 +15,10 @@ header img{
 }
 button {
     position: relative;
-    margin: 15px auto;
-    display: block;
-    height: 50px;
-    width: 220px;
-    font-size: 20px;
-    border-radius: 10px;
-    border: none;
+    margin: 15px 15px;    
+    height: 20px;
+    width: 120px;
+    font-size: 12px;   
 }
 #div-esquerda{
     float: left;
@@ -51,11 +48,38 @@ article div{
 .mostrandoLi{
   text-align: left;
 }
+.cavaleiros img{
+    width: 180px;
+    height: 215px;
+}
 .mostrandoLi img{
   float: left;
 }
 .mostrandoLi p{
-  padding-top: 5px!important;
-  margin-left: 95px!important;
+  padding-top: 2px;
+  margin-left: 95px;
   font-weight: bold;
+}
+#formulario{
+    width: 80%;
+    margin: 15px auto;
+    border-radius: 10px;
+    background-color: lavenderblush;
+}
+#formulario form{
+    padding-left: 10px;
+}
+#formulario input{
+    padding-right: 20px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+#formulario select{
+    margin-right: 40px;
+}
+#formImagens input{
+    margin-right: 5px;
+}
+#formImagens label + label{
+    margin-left: 40px;
 }
