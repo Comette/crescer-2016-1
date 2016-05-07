@@ -1,0 +1,7 @@
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\bin\Debug\Tema-Dia01-Tests.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\bin\Debug\Tema-Dia01-Tests.pdb
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\bin\Debug\Tema-Dia01.exe
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\bin\Debug\Tema-Dia01.pdb
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\obj\Debug\Tema-Dia01-Tests.csprojResolveAssemblyReference.cache
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\obj\Debug\Tema-Dia01-Tests.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01-Tests\obj\Debug\Tema-Dia01-Tests.pdb
