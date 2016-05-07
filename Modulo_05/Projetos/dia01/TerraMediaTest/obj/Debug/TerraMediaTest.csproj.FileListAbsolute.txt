@@ -1,0 +1,8 @@
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\bin\Debug\TerraMediaTest.dll
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\bin\Debug\TerraMediaTest.pdb
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\bin\Debug\dia01.exe
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\bin\Debug\dia01.pdb
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\obj\Debug\TerraMediaTest.csprojResolveAssemblyReference.cache
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\obj\Debug\TerraMediaTest.dll
+C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\TerraMediaTest\obj\Debug\TerraMediaTest.pdb
