@@ -30,7 +30,27 @@ namespace Tema_Dia01.Robos
             this.Ataque = 4;
             this.Defesa = 3;
             this.Upgrades = new IUpgrade[2];
-            //BonusAtaque = 20;
+        }
+
+        public Rush(EChip chip)
+            : base(chip)
+        {
+            this.Ataque = 4;
+            this.Defesa = 3;
+            this.Upgrades = new IUpgrade[2];
+            CalculaBonusChip();
+        }
+
+        public override void Atacar(Robo oponente)
+        {
+            if (oponente is Megaman)
+            {
+                oponente.RecebeAtaque(0);
+            }
+            else
+            {
+                oponente.RecebeAtaque(this.CalculaForcaAtaque());
+            }            
         }
     }
 }

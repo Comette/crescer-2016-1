@@ -14,6 +14,13 @@ namespace Tema_Dia01.Robos
             Ataque = 6;
         }
 
+        public Megaman(EChip chip)
+            : base(chip)
+        {
+            Ataque = 6;
+            CalculaBonusChip();
+        }
+
         public override void Atacar(Robo oponente)
         {
             int forca = this.CalculaForcaAtaque();

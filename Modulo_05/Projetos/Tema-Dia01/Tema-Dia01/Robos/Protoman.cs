@@ -9,10 +9,18 @@ namespace Tema_Dia01.Robos
     public class Protoman : Robo
     {
         private bool jaMorreu = false;
+
         public Protoman()
             : base()
         {
             Defesa = 2;
+        }
+
+        public Protoman(EChip chip)
+            : base(chip)
+        {
+            Defesa = 2;
+            CalculaBonusChip();
         }
 
         public override void RecebeAtaque(int forca)

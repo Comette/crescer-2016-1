@@ -13,6 +13,8 @@ namespace Tema_Dia01.Robos
         protected int Ataque { get; set; }
         protected int Defesa { get; set; }
 
+        protected EChip Chip;
+
         protected IUpgrade[] Upgrades { get; set; }
 
         public Robo()
@@ -20,6 +22,28 @@ namespace Tema_Dia01.Robos
             Ataque = 5;
             Vida = 100;
             Upgrades = new IUpgrade[3];
+            Chip = EChip.Nivel2;
+        }
+
+        public Robo(EChip chip)
+        {
+            Ataque = 5;
+            Vida = 100;
+            Upgrades = new IUpgrade[3];
+            Chip = chip;            
+        }
+
+        protected void CalculaBonusChip()
+        {
+            if (this.Chip == EChip.Nivel1)
+            {
+                this.Ataque--;
+            }
+            else if (Chip == EChip.Nivel3)
+            {
+                this.Ataque += 2;
+                this.Defesa++;
+            }
         }
 
         public virtual void Atacar(Robo oponente)
@@ -80,7 +104,7 @@ namespace Tema_Dia01.Robos
 
         public override string ToString()
         {
-            return "Nome: " + this.GetType().Name + ", Vida: " + this.Vida + ", Ataque: " + this.Ataque + "Defesa: " + this.Defesa;
+            return "Nome: " + this.GetType().Name + ", Vida: " + this.Vida + ", Ataque: " + this.Ataque + ", Defesa: " + this.Defesa;
         }
     }
 }

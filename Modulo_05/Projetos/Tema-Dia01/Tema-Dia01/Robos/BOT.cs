@@ -8,5 +8,16 @@ namespace Tema_Dia01.Robos
 {
     public class BOT:Robo
     {
+        public BOT()
+            : base()
+        {
+
+        }
+
+        public BOT(EChip chip)
+            : base(chip)
+        {
+            CalculaBonusChip();
+        }
     }
 }
