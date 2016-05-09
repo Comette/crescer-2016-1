@@ -34,7 +34,7 @@ namespace Tema_Dia01.Robos
             {
                 this.Vida = 0;
             }
-            else
+            else if (this.Vida - (forca - def) <= this.Vida)
             {
                 this.Vida -= forca - def;
             }

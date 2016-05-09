@@ -10,7 +10,7 @@ using Tema_Dia01.Upgrade;
 namespace Tema_Dia01_Tests
 {
     [TestClass]
-    class RushTest
+    public class RushTest
     {
         [TestMethod]
         public void RushNasceCom4Ataque3Vida()
@@ -55,7 +55,18 @@ namespace Tema_Dia01_Tests
             var inutil = new BOT();
             megaman.EquipaUpgrade(rush);
             inutil.Atacar(megaman);
-            Assert.AreEqual(97, megaman.Vida);
+            Assert.AreEqual(98, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void RushEquipaOutroRush()
+        {
+            var rush = new Rush();
+            var rush2 = new Rush();
+            var inutil = new BOT();
+            rush.EquipaUpgrade(rush2);
+            inutil.Atacar(rush);
+            Assert.AreEqual(100, rush.Vida);
         }
     }
 }

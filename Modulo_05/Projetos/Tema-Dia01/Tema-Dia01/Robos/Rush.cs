@@ -13,6 +13,10 @@ namespace Tema_Dia01.Robos
         public int BonusAtaque
         {
             get { return this.CalculaForcaAtaque(); }
+            set
+            {
+                BonusAtaque = value;
+            }
         }
 
         public int BonusDefesa
@@ -26,6 +30,7 @@ namespace Tema_Dia01.Robos
             this.Ataque = 4;
             this.Defesa = 3;
             this.Upgrades = new IUpgrade[2];
+            //BonusAtaque = 20;
         }
     }
 }
