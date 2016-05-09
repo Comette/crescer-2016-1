@@ -1,0 +1,9 @@
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Testes.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Testes.pdb
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Newtonsoft.Json.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Repositorio.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Repositorio.pdb
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\bin\Debug\Newtonsoft.Json.xml
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\obj\Debug\Testes.csprojResolveAssemblyReference.cache
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\obj\Debug\Testes.dll
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\Testes\obj\Debug\Testes.pdb
