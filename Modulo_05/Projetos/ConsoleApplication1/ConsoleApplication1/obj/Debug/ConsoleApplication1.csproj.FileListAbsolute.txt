@@ -1,0 +1,6 @@
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
