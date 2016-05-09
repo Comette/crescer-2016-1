@@ -68,5 +68,14 @@ namespace Tema_Dia01_Tests
             inutil.Atacar(rush);
             Assert.AreEqual(100, rush.Vida);
         }
+
+        [TestMethod]
+        public void RushNaoCausaDanoAoMegaman()
+        {
+            var rush = new Rush();
+            var megaman = new Megaman();
+            rush.Atacar(megaman);
+            Assert.AreEqual(100, megaman.Vida);
+        }
     }
 }
