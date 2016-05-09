@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Robos\BOT.cs" />
+    <Compile Include="Robos\EChip.cs" />
     <Compile Include="Robos\Rush.cs" />
     <Compile Include="Upgrade\BotasSuperVelocidade.cs" />
     <Compile Include="Upgrade\CanhaoPlasma.cs" />
