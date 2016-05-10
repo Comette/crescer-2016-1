@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repositorio
 {
-    public class Funcionario
+    public class Funcionario 
     {
         public int Id { get; private set; }
         public string Nome { get; private set; }

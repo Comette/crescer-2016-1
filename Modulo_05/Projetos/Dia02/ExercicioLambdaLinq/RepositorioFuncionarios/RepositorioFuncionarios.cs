@@ -14,6 +14,10 @@ namespace Repositorio
     {
         public List<Funcionario> Funcionarios { get; private set; }
 
+        private const TurnoTrabalho MANHA = TurnoTrabalho.Manha;
+        private const TurnoTrabalho TARDE = TurnoTrabalho.Tarde;
+        private const TurnoTrabalho NOITE = TurnoTrabalho.Noite;
+
         public RepositorioFuncionarios()
         {
             CriarBase();
@@ -86,51 +90,86 @@ namespace Repositorio
         public IList<Funcionario> BuscarPorCargo(Cargo cargo)
         {
             return Funcionarios.Where(Func => Func.Cargo.Equals(cargo)).ToList();
-        }
+        } //ok
 
         public IList<Funcionario> OrdenadosPorCargo()
         {
-            throw new NotImplementedException();
-        }
+            return Funcionarios.OrderBy(func => func.Cargo.Titulo).ThenBy(func => func.Nome).ToList();
+        } //ok
 
-        public IList<Funcionario> BuscarPorNome(string nome)
-        {
-            throw new NotImplementedException();
+        public IList<Funcionario> BuscarPorNome(string nome) //ok
+        {            
+            return Funcionarios.Where(func => (func.Nome.IndexOf(nome, StringComparison.OrdinalIgnoreCase) >= 0) ).ToList();
         }        
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
-        {
-            throw new NotImplementedException();
-        }        
+        {                      
+            return Funcionarios.Where(func => turnos.Contains(func.TurnoTrabalho)).ToList();
+        } //ok
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
-            throw new NotImplementedException();
-        }        
+            DateTime hoje = new DateTime();
+            hoje=DateTime.Today;
+            return Funcionarios.Where(func => 
+                (
+                    ((hoje.Year - func.DataNascimento.Year) >= (idade - 5)) && 
+                    ((hoje.Year - func.DataNascimento.Year) <= (idade + 5))
+                )
+             ).ToList();
+        } //ok
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            throw new NotImplementedException();
-        }
+            if (turno != null)
+            {
+                return Funcionarios.Where(func => func.TurnoTrabalho == turno).Average(func => func.Cargo.Salario);
+            }
+            else
+            {
+                return Funcionarios.Average(func => func.Cargo.Salario);
+            }            
+        } //ok
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
-        }
+            DateTime hoje = new DateTime();
+            hoje = DateTime.Now;
+            return Funcionarios.Where(func => func.DataNascimento.Month == hoje.Month).ToList();
+
+        }  //ok
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
-        }
+            return Funcionarios.Select(func => (dynamic)(new { NomeFuncionario = func.Nome, TituloCargo = func.Cargo.Titulo })).ToList();
+        } //ok
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            TurnoTrabalho[] todosOsTurnos = new TurnoTrabalho[3] { TurnoTrabalho.Manha, TurnoTrabalho.Tarde, TurnoTrabalho.Noite };
+
+            var funcionariosOrdanados = todosOsTurnos.Select(turno => (dynamic)(new { Turno = turno, Quantidade = (Funcionarios.Count(fun => fun.TurnoTrabalho == turno)) })).ToList();
+
+            return funcionariosOrdanados;
         }
 
         public dynamic FuncionarioMaisComplexo()
         {
-            throw new NotImplementedException();
+            //10) FuncionarioMaisComplexo()
+
+            //Retornar o funcionário cujo nome tenha mais consoantes, porém esse funcionário não pode ser "Desenvolvedor Júnior" nem do turno da tarde. O retorno deve ser um objeto que contenha as seguintes propriedades:
+
+            //    Nome (nome do funcionário)
+            //    DataNascimento (data denascimento do funcionário no formato "25/01/2016")
+            //    SalarioRS (salário do funcionário no formato brasileiro, exemplo: "R$ 999,99")
+            //    SalarioUS (salário do funcionário no formato americano, exemplo: ""$999.99")
+            //    QuantidadeMesmoCargo (quantidade de funcionários que estão no mesmo cargo que ele)
+
+            //Funcionarios.Where(func => (func.Cargo.Titulo != "Desenvolvedor Júnior") && (func.Nome.ToLower().Count(letra => consoantes.Contains(letra)) == Funcionarios.Max(func => func.Nome.ToLower().Count(letra => consoantes.Contains(letra)))   )).Select(Func => new { Nome = Func.Nome });
+
+            Char[] consoantes = new Char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'w', 'y', 'z' };
+            var funcionarioQueAtende = Funcionarios.Where(func => (func.Cargo.Titulo != "Desenvolvedor Júnior")).Max(func => func.Nome.ToLower().Count(letra => consoantes.Contains(letra)));
+            return Funcionarios.Where(func => ((func.Cargo.Titulo != "Desenvolvedor Júnior") && (func.Nome.ToLower().Count(letra => consoantes.Contains(letra)) == Funcionarios.Max(fun => fun.Nome.ToLower().Count(letra => consoantes.Contains(letra)))))).Select(func => (dynamic)(new { Nome = func.Nome }));            
         }
     }
 }
