@@ -77,7 +77,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Estilos\alana.css" />
+    <Content Include="Content\Estilos\alice.css" />
+    <Content Include="Content\Estilos\alycio.css" />
+    <Content Include="Content\Estilos\andrews.css" />
+    <Content Include="Content\Estilos\arthur.css" />
+    <Content Include="Content\Estilos\calvingerling.css" />
+    <Content Include="Content\Estilos\davi.css" />
+    <Content Include="Content\Estilos\diuly.css" />
+    <Content Include="Content\Estilos\douglas.css" />
+    <Content Include="Content\Estilos\erico.css" />
+    <Content Include="Content\Estilos\fabriciorissetto.css" />
+    <Content Include="Content\Estilos\fernando.css" />
+    <Content Include="Content\Estilos\gustavo.css" />
+    <Content Include="Content\Estilos\hedo.css" />
+    <Content Include="Content\Estilos\leon.css" />
+    <Content Include="Content\Estilos\lucas.css" />
+    <Content Include="Content\Estilos\marcelo.css" />
+    <Content Include="Content\Estilos\mauricio.css" />
+    <Content Include="Content\Estilos\michel.css" />
+    <Content Include="Content\Estilos\murillo.css" />
+    <Content Include="Content\Estilos\victor-stf.css" />
     <Content Include="Content\Estilos\victor.css" />
+    <Content Include="Content\Estilos\viniciusambrosi.css" />
+    <Content Include="Content\Estilos\viniciusAudibert.css" />
     <Content Include="Content\Imagens\blanka.png" />
     <Content Include="Content\Imagens\sobre2.jpg" />
     <Content Include="Content\Imagens\STF.jpg" />
@@ -96,9 +119,12 @@
     <Content Include="Views\StreatFigther\Index.cshtml" />
     <Content Include="Views\StreatFigther\FichaTecnica.cshtml" />
     <Content Include="Views\StreatFigther\SobreMim.cshtml" />
+    <Content Include="Views\Desafio\Index.cshtml" />
+    <Content Include="Views\Desafio\Erro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DesafioController.cs" />
     <Compile Include="Controllers\StreatFigtherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

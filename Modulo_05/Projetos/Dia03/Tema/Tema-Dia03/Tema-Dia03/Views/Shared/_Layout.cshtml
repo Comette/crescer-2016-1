@@ -8,22 +8,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Street Fighter - @ViewBag.Title</title>
-    <link href="~/Content/Estilos/victor.css" rel="stylesheet" />
+    <link href="~/Content/Estilos/victor-stf.css" rel="stylesheet" />
 </head>
 
 <body>
     <nav>
         <div class="menu-botao">
-            <a href="index.html">Inicio</a>
+            @Html.ActionLink("Inicio", "Index")            
         </div>
         <div class="menu-botao">
-            <a href="https://www.google.com.br/search?q=Street+figther&ie=utf-8&oe=utf-8&gws_rd=cr&ei=JUMgV9uhOsS4wATHsZmYDQ#q=Street+fighter&safe=off&tbm=nws" target="_blanck">Notícias</a></li>
+            <a href="https://www.google.com.br/search?q=Street+figther&ie=utf-8&oe=utf-8&gws_rd=cr&ei=JUMgV9uhOsS4wATHsZmYDQ#q=Street+fighter&safe=off&tbm=nws" target="_blanck">Notícias</a>
         </div>
         <div class="menu-botao">
-            <a href="ficha-tecnica.html">Ficha Técnica</a>
+            @Html.ActionLink("Ficha Técnica", "FichaTecnica")
         </div>
         <div class="menu-botao">
-            <a href="sobre.html">Sobre</a>
+            @Html.ActionLink("Sobre", "SobreMim")
         </div>
     </nav>
     <header>
