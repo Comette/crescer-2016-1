@@ -1,6 +1,0 @@
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\bin\Debug\Tema-Dia01.exe.config
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\bin\Debug\Tema-Dia01.exe
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\bin\Debug\Tema-Dia01.pdb
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\obj\Debug\Tema-Dia01.csprojResolveAssemblyReference.cache
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\obj\Debug\Tema-Dia01.exe
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Tema-Dia01\Tema-Dia01\obj\Debug\Tema-Dia01.pdb
