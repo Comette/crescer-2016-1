@@ -53,10 +53,7 @@ function obterMesesComMaisAniversarios() {
 }
 //----------------------04
 function obterAlturaMedia() {
-  var soma = 0;
-  for (var i = 0; i < goldSaints.length; i++) {
-    soma += goldSaints[i].alturaCm;
-  }
+  var soma = goldSaints.reduce(function(anterior, atual){ return anterior + atual.alturaCm}, 0);
   return Math.round((soma / goldSaints.length)) / 100;
 }
 //----------------------05
