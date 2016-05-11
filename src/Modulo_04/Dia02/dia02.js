@@ -66,17 +66,18 @@ function obterAlturaMediana() {
 //----------------------06
 //----------------A
 function obterPesoMedio() {
-  var soma = 0;
-  var semPeso=0;
-  for (var i = 0; i < goldSaints.length; i++) {
-    if (typeof goldSaints[i].pesoLb !== 'undefined') {
-      soma += goldSaints[i].pesoLb;
-    }else{
-      semPeso++;
-    }
-  }
+  var soma = goldSaints.filter(function(e){ return (typeof e.pesoLb !== 'undefined')}).reduce(function(anterior, atual){ return anterior + atual.pesoLb}, 0);
+  var comPeso=goldSaints.filter(function(e){ return (typeof e.pesoLb !== 'undefined')}).reduce(function(anterior){ return anterior + 1}, 0);
+  
+  // for (var i = 0; i < goldSaints.length; i++) {
+  //   if (typeof goldSaints[i].pesoLb !== 'undefined') {
+  //     soma += goldSaints[i].pesoLb;
+  //   }else{
+  //     semPeso++;
+  //   }
+  // }
   soma = soma * 0.4536;
-  return (Math.round((soma / (goldSaints.length-semPeso))*100)) / 100;
+  return (Math.round( ( soma / comPeso ) * 100 ) ) / 100;
 }
 //----------------B
 function obterPesoMedioDoadores(){
