@@ -58,11 +58,11 @@ function obterAlturaMedia() {
 }
 //----------------------05
 function obterAlturaMediana() {
-  var alturas = [];
-  for (var cavaleiro in goldSaints) {
-    alturas.push(goldSaints[cavaleiro].alturaCm);
-  }
-  alturas.sort(function (a, b) { return a - b });
+  var alturas = goldSaints.map(function(e){ return e.alturaCm}).sort(function (a, b) { return a - b });
+  // for (var cavaleiro in goldSaints) {
+  //   alturas.push(goldSaints[cavaleiro].alturaCm);
+  // }
+  // alturas.sort(function (a, b) { return a - b });
   var menor = alturas[Math.floor((alturas.length - 1) / 2)];
   var maior = alturas[Math.ceil((alturas.length - 1) / 2)];
   return Math.round((menor + maior) / 2) / 100;
