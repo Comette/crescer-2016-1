@@ -53,45 +53,52 @@ function obterMesesComMaisAniversarios() {
 }
 //----------------------04
 function obterAlturaMedia() {
+  
   var soma = goldSaints.reduce(function(anterior, atual){ return anterior + atual.alturaCm}, 0);
+  
   return Math.round((soma / goldSaints.length)) / 100;
 }
 //----------------------05
 function obterAlturaMediana() {
-  var alturas = goldSaints.map(function(e){ return e.alturaCm}).sort(function (a, b) { return a - b });
+  var alturas = goldSaints
+                .map(function(e){ return e.alturaCm})
+                .sort(function (a, b) { return a - b });
+                
   var menor = alturas[Math.floor((alturas.length - 1) / 2)];
+  
   var maior = alturas[Math.ceil((alturas.length - 1) / 2)];
+  
   return Math.round((menor + maior) / 2) / 100;
 }
 //----------------------06
 //----------------A
-function obterPesoMedio() {
-  var soma = goldSaints.filter(function(e){ return (typeof e.pesoLb !== 'undefined')}).reduce(function(anterior, atual){ return anterior + atual.pesoLb}, 0);
-  var comPeso=goldSaints.filter(function(e){ return (typeof e.pesoLb !== 'undefined')}).reduce(function(anterior){ return anterior + 1}, 0);
+function obterPesoMedio(cavaleiros) {
+  var soma = (cavaleiros || goldSaints)
+              .filter(function(e){ return (typeof e.pesoLb !== 'undefined')})
+              .reduce(function(anterior, atual){ return anterior + atual.pesoLb}, 0);
   
-  // for (var i = 0; i < goldSaints.length; i++) {
-  //   if (typeof goldSaints[i].pesoLb !== 'undefined') {
-  //     soma += goldSaints[i].pesoLb;
-  //   }else{
-  //     semPeso++;
-  //   }
-  // }
+  var comPeso=(cavaleiros || goldSaints)
+              .filter(function(e){ return (typeof e.pesoLb !== 'undefined')})
+              .reduce(function(anterior){ return anterior + 1}, 0);
+  
   soma = soma * 0.4536;
   return (Math.round( ( soma / comPeso ) * 100 ) ) / 100;
 }
 //----------------B
 function obterPesoMedioDoadores(){
-  var soma = 0;
-  var semPeso=0;
-  for (var i = 0; i < goldSaints.length; i++) {
-    if ((typeof goldSaints[i].pesoLb !== 'undefined') && (goldSaints[i].tipoSanguineo === 'O')) {
-      soma += goldSaints[i].pesoLb;
-    }else{
-      semPeso++;
-    }
-  }
-  soma = soma * 0.4536;
-  return (Math.round((soma / (goldSaints.length-semPeso))*100)) / 100;
+  var doadores = obterDoadores();
+  return obterPesoMedio(doadores);
+  // var soma = 0;
+  // var semPeso=0;
+  // for (var i = 0; i < goldSaints.length; i++) {
+  //   if ((typeof goldSaints[i].pesoLb !== 'undefined') && (goldSaints[i].tipoSanguineo === 'O')) {
+  //     soma += goldSaints[i].pesoLb;
+  //   }else{
+  //     semPeso++;
+  //   }
+  // }
+  // soma = soma * 0.4536;
+  // return (Math.round((soma / (goldSaints.length-semPeso))*100)) / 100;
 }
 //----------------------07
 function obterIMC(){
