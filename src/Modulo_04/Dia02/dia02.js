@@ -27,59 +27,28 @@ function obterCavaleiroComMaisGolpes() {
 }
 //----------------------03
 function obterMesesComMaisAniversarios() {
-  var mesesDoAno = [];
+  var aniversariantesPorMes = [];
   var indexMes = [];
   var nomeMes = [];
+  var mesesDoAno = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
   var maiorQtd = 0;
-  for (var i = 1; i < 13; i++) {
-    if (i < 10) {
-      mesesDoAno.push(goldSaints.filter(function (e) {
-        return e.dataNascimento.substr(5, 2) === '0' + i.toString();
-      }))
-    } else {
-      mesesDoAno.push(goldSaints.filter(function (e) {
-        return e.dataNascimento.substr(5, 2) === i.toString();
-      }))
+  for (var i = 0; i < 12; i++) {    
+    aniversariantesPorMes.push(goldSaints.filter(function (e) {
+      var mesAniversario = new Date(e.dataNascimento).getMonth();
+      return mesAniversario === i;
+    }));    
+  }
+  for (var i = 0; i < aniversariantesPorMes.length; i++) {
+    if (aniversariantesPorMes[i].length > maiorQtd) {
+      maiorQtd = aniversariantesPorMes[i].length;
     }
   }
-  for (var i = 0; i < mesesDoAno.length; i++) {
-    if (mesesDoAno[i].length > maiorQtd) {
-      maiorQtd = mesesDoAno[i].length;
+  for (var i = 0; i < aniversariantesPorMes.length; i++) {
+    if (aniversariantesPorMes[i].length >= maiorQtd) {
+      indexMes.push(i);
     }
   }
-  for (var i = 0; i < mesesDoAno.length; i++) {
-    if (mesesDoAno[i].length >= maiorQtd) {
-      indexMes.push(i + 1);
-    }
-  }
-  nomeMes = indexMes.map(function (e) {
-    switch (e) {
-      case 1:
-        return 'Janeiro';
-      case 2:
-        return 'Fevereiro';
-      case 3:
-        return 'Março';
-      case 4:
-        return 'Abril';
-      case 5:
-        return 'Maio';
-      case 6:
-        return 'Junho';
-      case 7:
-        return 'Julho';
-      case 8:
-        return 'Agosto';
-      case 9:
-        return 'Setembro';
-      case 10:
-        return 'Outubro';
-      case 11:
-        return 'Novembro';
-      case 12:
-        return 'Dezembro';
-    }
-  });
+  nomeMes = indexMes.map(function (e) { return mesesDoAno[e]; });
   return nomeMes;
 }
 //----------------------04
