@@ -104,7 +104,7 @@ function obterSobrepeso(){
   var sobrepeso = goldSaints.filter(function(e){
     return typeof e.pesoLb !== 'undefined';
   }).filter(function(e){
-    return arredondar(calculaIMC(e.pesoLb, e.alturaCm)) > 25;
+    return arredondar(calculaIMC(e.pesoLb, e.alturaCm)) >= 25 && arredondar(calculaIMC(e.pesoLb, e.alturaCm)) < 30;
   })  
   return sobrepeso;
 }
