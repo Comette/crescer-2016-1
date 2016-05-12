@@ -101,7 +101,7 @@ function obterIMC(){
 }
 //----------------------08
 function obterSobrepeso(){
-  var Sobrepeso = goldSaints.filter(function(e){
+  var sobrepeso = goldSaints.filter(function(e){
     return typeof e.pesoLb !== 'undefined';
   }).filter(function(e){
     return arredondar(calculaIMC(e.pesoLb, e.alturaCm)) > 25;
