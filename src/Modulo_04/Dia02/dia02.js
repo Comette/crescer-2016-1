@@ -74,12 +74,15 @@ function obterAlturaMediana() {
 //----------------------06
 //----------------A
 function obterPesoMedio(cavaleiros) {
+  var filtraApenasComPeso = function (e) {
+    return (typeof e.pesoLb !== 'undefined')
+  }
   var soma = (cavaleiros || goldSaints)
-              .filter(function(e){ return (typeof e.pesoLb !== 'undefined')})
+              .filter(filtraApenasComPeso)
               .reduce(function(anterior, atual){ return anterior + atual.pesoLb}, 0);
   
   var comPeso=(cavaleiros || goldSaints)
-              .filter(function(e){ return (typeof e.pesoLb !== 'undefined')})
+              .filter(filtraApenasComPeso)
               .reduce(function(anterior){ return anterior + 1}, 0);
   
   soma = soma * 0.4536;
