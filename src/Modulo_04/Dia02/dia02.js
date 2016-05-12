@@ -15,14 +15,10 @@ function obterDoadores() {
 }
 //----------------------02
 function obterCavaleiroComMaisGolpes() {
-  var cavaleiroComMaisGolpes;
-  for (var i = 0; i < goldSaints.length; i++) {
-    if (i == 0) {
-      cavaleiroComMaisGolpes = goldSaints[i];
-    } else if (goldSaints[i].golpes.length >= cavaleiroComMaisGolpes.golpes.length) {
-      cavaleiroComMaisGolpes = goldSaints[i];
-    }
-  }
+  var cavaleiroComMaisGolpes = goldSaints.concat()
+                                .sort(function(a, b){
+                                  return b.golpes.length - a.golpes.length
+                                })[0];
   return cavaleiroComMaisGolpes;
 }
 //----------------------03
@@ -88,17 +84,6 @@ function obterPesoMedio(cavaleiros) {
 function obterPesoMedioDoadores(){
   var doadores = obterDoadores();
   return obterPesoMedio(doadores);
-  // var soma = 0;
-  // var semPeso=0;
-  // for (var i = 0; i < goldSaints.length; i++) {
-  //   if ((typeof goldSaints[i].pesoLb !== 'undefined') && (goldSaints[i].tipoSanguineo === 'O')) {
-  //     soma += goldSaints[i].pesoLb;
-  //   }else{
-  //     semPeso++;
-  //   }
-  // }
-  // soma = soma * 0.4536;
-  // return (Math.round((soma / (goldSaints.length-semPeso))*100)) / 100;
 }
 //----------------------07
 function obterIMC(){
