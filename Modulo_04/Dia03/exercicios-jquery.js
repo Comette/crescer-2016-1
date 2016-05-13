@@ -107,15 +107,15 @@ $(function () {
       pesoLb: (formData.get('peso') / 0.4536),
       signo: formData.get('signo'),
       localNascimento: formData.get('localNascimento'),
-      localTreinamento: formData.get('localNascimento'),
+      localTreinamento: formData.get('localTreinamento'),
       golpes:[],
       imagens:[]      
     }
     for (var i = 0; i < qtdGolpes; i++){
-      cavaleiroPronto[golpes].push(golpesAdicionados[i]);
+      cavaleiroPronto["golpes"].push(golpesAdicionados[i])
     }
     for (var i = 0; i < qtdImagens; i++) {
-      cavaleiroPronto[imagens].push({ url: urls[i], isThumb: checkboxMarcadas[i] });
+      cavaleiroPronto["imagens"].push({ url: urls[i], isThumb: checkboxMarcadas[i] })
     }    
     return cavaleiroPronto;
   };
