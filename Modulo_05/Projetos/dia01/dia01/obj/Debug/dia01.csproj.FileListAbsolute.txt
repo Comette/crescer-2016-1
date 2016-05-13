@@ -1,6 +1,0 @@
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\bin\Debug\dia01.exe.config
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\bin\Debug\dia01.exe
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\bin\Debug\dia01.pdb
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\obj\Debug\dia01.csprojResolveAssemblyReference.cache
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\obj\Debug\dia01.exe
-C:\Users\victor.ribeiro\Documents\Modulo01\GitHub\crescer_2016-1\Modulo_05\Projetos\dia01\dia01\obj\Debug\dia01.pdb

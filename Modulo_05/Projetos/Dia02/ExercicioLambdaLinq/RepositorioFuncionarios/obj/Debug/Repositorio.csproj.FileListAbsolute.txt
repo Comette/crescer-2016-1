@@ -1,5 +1,0 @@
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.dll
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.pdb
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.dll
-G:\VICTOR\TRABALHO\CWI\Crescer\Modulo_01\Repositório\Modulo_05\Projetos\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.pdb
