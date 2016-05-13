@@ -12,7 +12,7 @@ namespace LojaNinja.MVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                defaults: new { controller = "Pedido", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "LojaNinja.MVC.Controllers" }
             );
         }

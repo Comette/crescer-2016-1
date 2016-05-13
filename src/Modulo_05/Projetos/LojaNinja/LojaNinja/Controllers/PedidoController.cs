@@ -13,11 +13,11 @@ namespace LojaNinja.MVC.Controllers
         }
 
         // GET: Pedido
-        public ActionResult Novo(PedidoModel model = null)
+        public ActionResult Novo(int? id)
         {
-            if(model != null)
+            if(id.HasValue)
             {
-                return View(model);
+                return View(id);
             }
             else
             {

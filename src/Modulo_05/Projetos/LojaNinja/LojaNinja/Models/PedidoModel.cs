@@ -13,7 +13,8 @@ namespace LojaNinja.MVC.Models
 
         [Required(ErrorMessage = "Valor do produto não informado!")]
         [DisplayName("Valor do produto")]
-        public double ValorVenda { get; set; }
+        
+        public decimal ValorVenda { get; set; }
 
         [Required(ErrorMessage = "Selecione a data de entrega desejada!")]
         [DisplayName("Data de entrega desejada")]
@@ -28,8 +29,10 @@ namespace LojaNinja.MVC.Models
         [DisplayName("Nome do cliente")]
         public string NomeCliente { get; set; }
 
+        [Required(ErrorMessage = "Cidade do cliente não informada!")]
         public string Cidade { get; set; }
 
+        [Required(ErrorMessage = "Endereço do cliente não informado!")]
         public string Estado { get; set; }
     }
 }
