@@ -15,7 +15,7 @@
     </span>
     <br />
     <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Deletar")" class="btn btn-default">
+        <a href="@Url.Action("Deletar", new { id=Model.IDPedido})" class="btn btn-default">
             <span class="glyphicon glyphicon-trash"></span>
         </a>
         Excluir Pedido
