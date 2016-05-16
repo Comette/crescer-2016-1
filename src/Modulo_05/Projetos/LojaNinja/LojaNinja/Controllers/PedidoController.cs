@@ -33,7 +33,6 @@ namespace LojaNinja.MVC.Controllers
             }
 
         }
-
         // POST: Pedido
         public ActionResult Salvar(PedidoModel model, int id)
         {
@@ -98,6 +97,7 @@ namespace LojaNinja.MVC.Controllers
             var pedido = repositorio.ObterPedidoPorId(id);
             return View(pedido);
         }
+
         public ActionResult Excluido(int id)
         {
             repositorio.ExcluirPedido(id);
