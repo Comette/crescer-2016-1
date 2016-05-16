@@ -1,0 +1,120 @@
+﻿@model LojaNinja.Dominio.Pedido
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2 style="margin-top: 35px;">Detalhes do Pedido</h2>
+<hr style="margin-top: 10px;">
+<div style="float: right; margin-right: 400px; margin-top: 80px;">
+    <span style="position: relative;padding: 2px;display: inline-block;margin-top: 10px;;">
+        <a href="@Url.Action("Novo", new { id = Model.IDPedido })" class="btn btn-default">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        Editar Pedido
+    </span>
+    <br />
+    <span style="position: relative;padding: 2px;display: inline-block;">
+        <a href="@Url.Action("Deletar")" class="btn btn-default">
+            <span class="glyphicon glyphicon-trash"></span>
+        </a>
+        Excluir Pedido
+    </span>
+    <br />
+    <span style="position: relative;padding: 2px;display: inline-block;">
+        <a href="@Url.Action("Listagem")" class="btn btn-default">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+        </a>
+        Voltar para Lisagem
+    </span>
+</div>
+<div style="display: inline-block;">    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEntrega)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEntrega)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urgente)
+        </dt>
+
+        <dd>
+            @{
+                if (Model.Urgente == true)
+                {
+                    <div style="color: red; font-size: 20px; text-align:left">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    </div>
+                }
+                else
+                {
+                    <div style="color: grey; font-size: 20px; text-align:left">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </div>
+                }
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+</div>
+

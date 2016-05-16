@@ -34,5 +34,17 @@ namespace LojaNinja.MVC.Models
 
         [Required(ErrorMessage = "Endereço do cliente não informado!")]
         public string Estado { get; set; }
+
+        public PedidoModel() { }
+        public PedidoModel(Pedido pedido)
+        {
+            this.NomeCliente = pedido.NomeCliente;
+            this.NomeProduto = pedido.NomeProduto;
+            this.ValorVenda = pedido.ValorPedido;
+            this.TipoPagamento = pedido.TipoPagamento;
+            this.DataEntrega = pedido.DataEntrega;
+            this.Cidade = pedido.Cidade;
+            this.Estado = pedido.Estado;
+        }
     }
 }

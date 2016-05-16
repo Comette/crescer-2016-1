@@ -16,7 +16,7 @@
     <script src="~/scripts/LojaNinja/overrides-validacao.js"></script>
 }
 
-<h2>Novo Pedido</h2>
+<h2>Cadastro de Pedido</h2>
 
 
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post)) 
@@ -85,7 +85,7 @@
 
         <div class="form-group">
             <div class="col-md-10">
-                <input id="inputID"type="number" name="ID" value="@ViewBag.IDPedido"/>
+                <input id="inputID"type="number" name="ID" value="@(ViewBag.IDPedido ?? 0)"/>
             </div>
         </div>
 

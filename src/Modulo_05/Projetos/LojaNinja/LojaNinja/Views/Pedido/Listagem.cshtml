@@ -1,0 +1,127 @@
+﻿@model IEnumerable<LojaNinja.Dominio.Pedido>
+
+@{
+    ViewBag.Title = "Listagem";
+}
+
+<h2>Listagem</h2>
+<hr />
+<h3> <span style="font-size: 18px" class="glyphicon glyphicon-filter"></span> Filtrar pedidos</h3>
+<h4 style="color: red">@{if (ViewBag.Erro != null)
+        {
+        <span style="font-size: 22px;" class="glyphicon glyphicon-exclamation-sign"></span>
+        @ViewBag.Erro
+        }
+    }</h4>
+<form action="/Pedido/Listagem" class="form-inline" role="form" method="post">
+    <div class="form-group">        
+        <label for="NomeCliente">Cliente:</label>
+        <input type="text" class="form-control" name="nomeCliente" id="NomeCliente" placeholder="Ex: Nunes">
+    </div>
+    <div class="form-group">
+        <label for="NomeProduto">Produto:</label>
+        <input type="text" class="form-control" id="NomeProduto" name="nomeProduto" placeholder="Ex: Kunai">
+    </div>
+    <button type="submit" class="btn btn-default" style="vertical-align: bottom">Buscar Pedidos</button>
+</form>
+
+<hr />
+
+<table class="table table-striped">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Urgente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataEntrega)
+                </td>
+                <td>
+                    @{
+                        if (item.Urgente == true)
+                        {
+                            <div style="color: red; font-size: 22px; text-align:center">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div style="color: grey; font-size: 22px; text-align:center">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </div>
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <span>
+                        <a href="@Url.Action("Detalhes", new { id = item.IDPedido })" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="@Url.Action("Novo", new { id = item.IDPedido })" class="btn btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="@Url.Action("Deletar", new { id = item.IDPedido })" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+                        }
+    </tbody>
+</table>

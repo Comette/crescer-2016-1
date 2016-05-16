@@ -129,6 +129,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Content\Datepicker\css\datepicker.css" />
     <Content Include="Content\Datepicker\css\datepicker.min.css" />
@@ -167,6 +171,12 @@
     <Content Include="Views\Pedido\Novo.cshtml" />
     <Content Include="Views\Pedido\Salvar.cshtml" />
     <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Listagem.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
+    <Content Include="Views\Pedido\Detalhes.cshtml" />
+    <Content Include="Views\Pedido\Deletar.cshtml" />
+    <Content Include="Views\Pedido\Excluido.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
