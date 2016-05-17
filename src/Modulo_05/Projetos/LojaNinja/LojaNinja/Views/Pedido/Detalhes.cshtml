@@ -7,25 +7,25 @@
 <h2 style="margin-top: 35px;">Detalhes do Pedido</h2>
 <hr style="margin-top: 10px;">
 <div style="float: right; margin-right: 400px; margin-top: 80px;">
-    <span style="position: relative;padding: 2px;display: inline-block;margin-top: 10px;;">
-        <a href="@Url.Action("Novo", new { id = Model.IDPedido })" class="btn btn-default">
-            <span class="glyphicon glyphicon-pencil"></span>
-        </a>
-        Editar Pedido
+    <span style="padding: 2px;display: inline-block;margin-top: 10px;">
+        <a href="@Url.Action("Novo", new { id = Model.IDPedido })" class="btn btn-warning">
+            <span style="padding-right: 12px;" class="glyphicon glyphicon-pencil"></span>
+            EDITAR
+        </a>        
     </span>
     <br />
-    <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Deletar", new { id=Model.IDPedido})" class="btn btn-default">
-            <span class="glyphicon glyphicon-trash"></span>
-        </a>
-        Excluir Pedido
+    <span style="padding: 2px;display: inline-block;">
+        <a href="@Url.Action("Deletar", new { id=Model.IDPedido})" class="btn btn-danger">
+            <span style="padding-right: 3px;" class="glyphicon glyphicon-trash"></span>
+            EXCLUIR
+        </a>        
     </span>
     <br />
-    <span style="position: relative;padding: 2px;display: inline-block;">
+    <span style="padding: 2px;display: inline-block;">
         <a href="@Url.Action("Listagem")" class="btn btn-default">
-            <span class="glyphicon glyphicon-arrow-left"></span>
-        </a>
-        Voltar para Lisagem
+            <span style="padding-right: 10px;" class="glyphicon glyphicon-arrow-left"></span>
+            VOLTAR
+        </a>        
     </span>
 </div>
 <div style="display: inline-block;">    

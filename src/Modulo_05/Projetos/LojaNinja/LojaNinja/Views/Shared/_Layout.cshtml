@@ -21,6 +21,25 @@
                 @Html.ActionLink("Loja Ninja", "Index", "Pedido", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+                <div style="float:right;">
+                    @if (ServicoDeSessao.Logado)
+                    {
+                        <p style="color: #5e5e5e; margin-top: 15px; display: inline-block; padding-right: 20px;">Bem vindo, @(((UsuarioLogadoModel)HttpContext.Current.Session["USUARIO_LOGADO"]).Nome)!</p>
+                        <a href="@Url.Action("Logout")">
+                            <span style="padding-right: 5px;" class="glyphicon glyphicon-log-out"></span>
+                            SAIR
+                        </a>
+                    }
+                    else
+                    {
+                        <span style="padding: 2px;display: inline-block;margin-top: 5px;">
+                            <a href="@Url.Action("Login")" class="btn btn-success">
+                                <span style="padding-right: 5px;" class="glyphicon glyphicon-log-in"></span>
+                                ENTRAR
+                            </a>
+                        </span>
+                    }
+                </div>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -32,7 +51,7 @@
                         </ul>                       
                     </li>
                 </ul>
-            </div>
+            </div>            
         </div>
     </div>
 

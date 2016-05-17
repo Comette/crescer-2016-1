@@ -4,7 +4,13 @@
     ViewBag.Title = "Listagem";
 }
 
-<h2>Listagem</h2>
+<h2 style="display: inline-block">Listagem</h2>
+<span style="float: right;padding: 2px;margin-right: 200px; margin-top: 25px;">
+    <a href="@Url.Action("Novo")" class="btn btn-primary">
+        <span style="padding-right: 3px;" class="glyphicon glyphicon-edit"></span>
+        NOVO PEDIDO
+    </a>
+</span>
 <hr />
 <h3> <span style="font-size: 18px" class="glyphicon glyphicon-filter"></span> Filtrar pedidos</h3>
 <h4 style="color: red">@{if (ViewBag.Erro != null)
@@ -22,7 +28,10 @@
         <label for="NomeProduto">Produto:</label>
         <input type="text" class="form-control" id="NomeProduto" name="nomeProduto" placeholder="Ex: Kunai">
     </div>
-    <button type="submit" class="btn btn-default" style="vertical-align: bottom">Buscar Pedidos</button>
+    <button type="submit" class="btn btn-success" style="vertical-align: bottom">
+        <span style="font-size: 12px;" class="glyphicon glyphicon-search"></span>
+        Buscar Pedidos
+    </button>
 </form>
 
 <hr />
@@ -70,7 +79,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.NomeProduto)
                 </td>
-                <td>
+                <td style="min-width: 120px;">
                     @Html.DisplayFor(modelItem => item.ValorPedido)
                 </td>
                 <td>
@@ -104,19 +113,19 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Estado)
                 </td>
-                <td>
+                <td style="min-width: 145px;">
                     <span>
-                        <a href="@Url.Action("Detalhes", new { id = item.IDPedido })" class="btn btn-default">
-                            <span class="glyphicon glyphicon-search"></span>
+                        <a href="@Url.Action("Detalhes", new { id = item.IDPedido })" class="btn btn-info">
+                            <span class="glyphicon glyphicon-zoom-in"></span>
                         </a>
                     </span>
                     <span>
-                        <a href="@Url.Action("Novo", new { id = item.IDPedido })" class="btn btn-default">
+                        <a href="@Url.Action("Novo", new { id = item.IDPedido })" class="btn btn-warning">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
                     </span>
                     <span>
-                        <a href="@Url.Action("Deletar", new { id = item.IDPedido })" class="btn btn-default">
+                        <a href="@Url.Action("Deletar", new { id = item.IDPedido })" class="btn btn-danger">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>
                     </span>

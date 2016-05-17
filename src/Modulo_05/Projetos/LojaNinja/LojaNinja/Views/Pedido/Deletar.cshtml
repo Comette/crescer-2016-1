@@ -3,7 +3,23 @@
     ViewBag.Title = "Deletar";
 }
 
-<h3>Tem certeza que deseja <span style="color: red; font-weight: bold;">excluir pemanentemente</span> o pedido abaixo?</h3>
+<h4 style="margin-top: 40px">Tem certeza que deseja <span style="color: red; font-weight: bold;">excluir pemanentemente</span> o pedido abaixo?</h4>
+<hr />
+<div style="float: right; margin-right: 400px; margin-top: 125px;">
+    <span style="position: relative;padding: 2px;display: inline-block;">
+        <a href="@Url.Action("Excluido", new { id = Model.IDPedido})" class="btn btn-danger">
+            <span style="padding-right: 3px;" class="glyphicon glyphicon-trash"></span>
+            EXCLUIR
+        </a>
+    </span>
+    <br />
+    <span style="position: relative;padding: 2px;display: inline-block;">
+        <a href="@Url.Action("Detalhes", new { id = Model.IDPedido })" class="btn btn-default">
+            <span style="padding-right: 10px;" class="glyphicon glyphicon-arrow-left"></span>
+            VOLTAR
+        </a>
+    </span>
+</div>
 
 <div style="display: inline-block;">
     <dl class="dl-horizontal">
@@ -94,19 +110,5 @@
 
     </dl>
 </div>
-<div>
-    <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Excluido", new { id = Model.IDPedido})" class="btn btn-danger">
-            <span style="padding-right: 3px;" class="glyphicon glyphicon-trash"></span>
-            EXCLUIR
-        </a>
-    </span>
-    <br />
-    <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Detalhes", new { id = Model.IDPedido })" class="btn btn-default">
-            <span style="padding-right: 5px;" class="glyphicon glyphicon-arrow-left"></span>
-            VOLTAR
-        </a>
-    </span>
-</div>
+
 
