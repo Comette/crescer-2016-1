@@ -6,7 +6,7 @@
 
 <h2 style="display: inline-block">Listagem</h2>
 <span style="float: right;padding: 2px;margin-right: 200px; margin-top: 25px;">
-    <a href="@Url.Action("Novo")" class="btn btn-primary">
+    <a href="@Url.Action("Novo", "Pedido")" class="btn btn-primary">
         <span style="padding-right: 3px;" class="glyphicon glyphicon-edit"></span>
         NOVO PEDIDO
     </a>
@@ -115,17 +115,17 @@
                 </td>
                 <td style="min-width: 145px;">
                     <span>
-                        <a href="@Url.Action("Detalhes", new { id = item.IDPedido })" class="btn btn-info">
+                        <a href="@Url.Action("Detalhes", "Pedido", new { id = item.IDPedido })" class="btn btn-info">
                             <span class="glyphicon glyphicon-zoom-in"></span>
                         </a>
                     </span>
                     <span>
-                        <a href="@Url.Action("Novo", new { id = item.IDPedido })" class="btn btn-warning">
+                        <a href="@Url.Action("Novo", "Pedido", new { id = item.IDPedido })" class="btn btn-warning">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
                     </span>
                     <span>
-                        <a href="@Url.Action("Deletar", new { id = item.IDPedido })" class="btn btn-danger">
+                        <a href="@Url.Action("Deletar", "Pedido", new { id = item.IDPedido })" class="btn btn-danger">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>
                     </span>

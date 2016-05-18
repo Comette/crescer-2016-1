@@ -7,14 +7,14 @@
 <hr />
 <div style="float: right; margin-right: 400px; margin-top: 125px;">
     <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Excluido", new { id = Model.IDPedido})" class="btn btn-danger">
+        <a href="@Url.Action("Excluido", "Pedido", new { id = Model.IDPedido})" class="btn btn-danger">
             <span style="padding-right: 3px;" class="glyphicon glyphicon-trash"></span>
             EXCLUIR
         </a>
     </span>
     <br />
     <span style="position: relative;padding: 2px;display: inline-block;">
-        <a href="@Url.Action("Detalhes", new { id = Model.IDPedido })" class="btn btn-default">
+        <a href="@Url.Action("Detalhes", "Pedido", new { id = Model.IDPedido })" class="btn btn-default">
             <span style="padding-right: 10px;" class="glyphicon glyphicon-arrow-left"></span>
             VOLTAR
         </a>

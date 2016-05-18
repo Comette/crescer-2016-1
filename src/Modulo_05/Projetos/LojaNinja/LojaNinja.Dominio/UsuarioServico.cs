@@ -24,6 +24,13 @@ namespace LojaNinja.Dominio
             return usuarioEncontrado;
         }
 
+        public void CadastrarUsuario(string nome, string email, string senha)
+        {
+            var senhaCriptografada = Criptografar(senha);
+            Usuario novo = new Usuario(nome, email, senhaCriptografada);
+            _usuarioRepositorio.CadastraUsuario(novo);
+        }
+
         private string Criptografar(string texto)
         {
             using (MD5 md5Hash = MD5.Create())

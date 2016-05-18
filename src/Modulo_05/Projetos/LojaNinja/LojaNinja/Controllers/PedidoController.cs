@@ -11,13 +11,7 @@ namespace LojaNinja.MVC.Controllers
 {
     public class PedidoController : Controller
     {
-        private RepositorioVendas repositorio = new RepositorioVendas();
-        private UsuarioServico _usuarioServico;
-
-        public PedidoController()
-        {
-            _usuarioServico = new UsuarioServico(new RepositorioUsuarios());
-        } 
+        private RepositorioVendas repositorio = new RepositorioVendas();         
 
         // GET: Pedido
         public ActionResult Index()
@@ -110,37 +104,6 @@ namespace LojaNinja.MVC.Controllers
             repositorio.ExcluirPedido(id);
             return View();
         }
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult ValidarUser(LoginModel login)
-        {
-            if (ModelState.IsValid)
-            {
-                Usuario usuarioEncontrado = _usuarioServico.BuscarUsuarioPorAutenticacao(login.Email, login.Senha);
-
-                if(usuarioEncontrado != null)
-                {
-                    var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
-                    ServicoDeSessao.CriarSessao(usuarioLogadoModel);
-                    ViewBag.NomeUsuarioLogado = usuarioLogadoModel.Nome;
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("INVALID_USER", "Usuário ou senha inválido.");
-                }
-            }
-            return View("Login");
-        }
-
-        public ActionResult Logout()
-        {
-            ServicoDeSessao.EncerraSessao();
-            return View("Index");
-        }
+        
     }
 }

@@ -77,6 +77,7 @@ namespace LojaNinja.Dominio
         {
             this.DataPedido = DateTime.Today;
         }
+
         private void defineUrgenciaPedido()
         {
             var prazoDesejado = this.DataEntrega.Day - this.DataPedido.Day;

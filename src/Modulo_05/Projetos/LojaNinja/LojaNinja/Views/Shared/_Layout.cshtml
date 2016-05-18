@@ -25,7 +25,7 @@
                     @if (ServicoDeSessao.Logado)
                     {
                         <p style="color: #5e5e5e; margin-top: 15px; display: inline-block; padding-right: 20px;">Bem vindo, @(((UsuarioLogadoModel)HttpContext.Current.Session["USUARIO_LOGADO"]).Nome)!</p>
-                        <a href="@Url.Action("Logout")">
+                        <a href="@Url.Action("Logout", "Usuario")">
                             <span style="padding-right: 5px;" class="glyphicon glyphicon-log-out"></span>
                             SAIR
                         </a>
@@ -33,9 +33,15 @@
                     else
                     {
                         <span style="padding: 2px;display: inline-block;margin-top: 5px;">
-                            <a href="@Url.Action("Login")" class="btn btn-success">
+                            <a href="@Url.Action("Login", "Usuario")" class="btn btn-success">
                                 <span style="padding-right: 5px;" class="glyphicon glyphicon-log-in"></span>
                                 ENTRAR
+                            </a>
+                        </span>
+                        <span style="padding: 2px;display: inline-block;margin-top: 5px;">
+                            <a href="@Url.Action("Cadastro", "Usuario")" class="btn btn-primary">
+                                <span style="padding-right: 5px;" class="glyphicon glyphicon-floppy-disk"></span>
+                                CADASTRAR
                             </a>
                         </span>
                     }

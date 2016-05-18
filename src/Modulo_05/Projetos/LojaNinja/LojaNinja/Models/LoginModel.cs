@@ -9,15 +9,15 @@ namespace LojaNinja.MVC.Models
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage = "O email é obrigatório!")]
         [DisplayName("E-mail")]
         [StringLength(100)]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "E-mail inválido! Tente novamente.")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A senha é obrigatória!")]
         [DisplayName("Senha")]
-        [StringLength(100)]
+        [StringLength(50)]
         public string Senha { get; set; }
     }
 }

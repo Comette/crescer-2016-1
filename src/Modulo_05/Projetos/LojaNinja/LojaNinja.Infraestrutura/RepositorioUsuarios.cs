@@ -37,5 +37,10 @@ namespace LojaNinja.Repositorio
                 c => c.Email.Equals(email) && c.Senha.Equals(senha));
         }
 
+        public void CadastraUsuario(Usuario usuarioNovo)
+        {
+            //TODO: no funfa
+            _usuarios.Add(usuarioNovo);
+        }
     }
 }
