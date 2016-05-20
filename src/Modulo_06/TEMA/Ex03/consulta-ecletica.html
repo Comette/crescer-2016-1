@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tema - AJAX</title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="tema-ajax-dia01-ex03.css">
+</head>
+<body>
+    <header class="navbar navbar-default">
+        <h3>Ex 03: Consulta Albuns por Artista + Random</h3>
+    </header>  
+    <form id="entrada" class="container">
+        <label for="artistaEntrada">Digite o nome do(a) artista:</label>
+        <input id="artistaEntrada" name="artista" type="text" class="form-control" placeholder="Ex: Bob Dylan">
+        <br>
+        <input class="btn btn-success" type="submit">
+        <a id="limpar" class="btn btn-default" href="#">Limpar</a>
+    </form>
+    <hr>
+    <div id="msgErro" class="container"></div>
+    <div class="container">
+        <div id="imagens"></div>
+    </div> 
+    
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="tema-ajax-dia01-ex03.js"></script>  
+</body>
+</html>
