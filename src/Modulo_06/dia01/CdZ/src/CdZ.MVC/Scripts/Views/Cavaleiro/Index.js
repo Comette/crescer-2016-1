@@ -1,15 +1,17 @@
 ﻿'use strict';
 
+var cavaleirosListados = [];
+var $cavaleiros = $('#cavaleiros');
 function carregarDadosNaPagina() {
-    $.ajax({ url: urlCavaleiroGet, type: 'GET' })
+    $.ajax({ url: urlCavaleiroGet, type: 'GET'/*, timeout: 2000 */})
     .then(
         function onSuccess(res) {
-            console.log(res.data);
-            var $cavaleiros = $('#cavaleiros');
+            console.log(res.data);            
             res.data.forEach(function (cava) {
                 $cavaleiros.append(
                     $('<li>').append(cava.Nome)
                 );
+                cavaleirosListados.push(cava.Id);
             });
         },
         function onError(res) {
@@ -65,26 +67,25 @@ function registrarEventoDoBotao() {
 };
 registrarEventoDoBotao();
 
+var qtdNovoCavaleiros;
 
-/*.done(function (res) {
-    console.log(res.data);
-        var $cavaleiros = $('#cavaleiros');
+function verificaNovosCavaleiros() {
+    qtdNovoCavaleiros = 0;
+    $.get(urlCavaleiroGet).done(
+    function(res) {
         res.data.forEach(function (cava) {
-            $cavaleiros.append(
-                $('<li>').append(cava.Nome)
-            );
+            if ($.inArray(cava.Id, cavaleirosListados) === -1){
+                $cavaleiros.append(
+                    $('<li>').append(cava.Nome)
+                );
+                cavaleirosListados.push(cava.Id);
+                qtdNovoCavaleiros++;
+            }
         });
-})
-.fail(function (res) {
-    console.error(':(');
-    console.error(res);
+        alert('Novos cavaleiros:' + qtdNovoCavaleiros);
+    });    
+};
+var intervalo = 1000 * 5;
+setInterval(verificaNovosCavaleiros, intervalo);
 
-    var criarSpanComErro = function (msg) {
-        return $('<span>').text(msg).addClass('erro');
-    };
 
-    $('#feedback')
-    .append(criarSpanComErro(res.status))
-    .append($('<br>'))
-    .append(criarSpanComErro(res.statusText));
-});*/
