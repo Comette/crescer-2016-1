@@ -16,6 +16,7 @@ $(function () {
     });
 
     $btnFecharCadastro.click(function (e) {
+        $formularioCadastro[0].reset();
         $formularioCadastro.hide();
         $btnNovoCadastro.show();
     });
@@ -30,8 +31,15 @@ $(function () {
 
     $formularioCadastro.submit(function (e) {
         var cavaleiro = cadastroView.converteFormParaCavaleiro($formularioCadastro);
-        indexView.adicionarCavaleiroNoServidor({ self: indexView, cavaleiro: cavaleiro })
+        if (cavaleiro.Id > 0) {
+            indexView.editarCavaleiroNoServidor({ self: indexView, cavaleiro: cavaleiro });
+        } else {
+            indexView.adicionarCavaleiroNoServidor({ self: indexView, cavaleiro: cavaleiro });
+        }
         debugger;
+        $formularioCadastro[0].reset();
+        $formularioCadastro.hide();
+        $btnNovoCadastro.show();
         return e.preventDefault();
     })
 })

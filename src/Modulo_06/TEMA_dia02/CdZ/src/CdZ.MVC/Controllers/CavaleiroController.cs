@@ -51,8 +51,6 @@ namespace CdZ.MVC.Controllers
         {
             _cavaleiros.Excluir(id);
             return NoContentJsonVazio();
-            // OU retornar a lista atualizada de todos cavaleiros
-            // return Json(new { data = _cavaleiros.Todos() });
         }
 
         [HttpPut]

@@ -18,6 +18,8 @@
     <form id="frmNovoCavaleiro" method="POST">
         <!--Título Formulário-->
         <h4>Cadastro de Cavaleiros:</h4>
+        <!--ID-->
+        <input type="number" name="IdCavaleiro" style="display: none" />
         <!-- nome -->
         <label for="txtNomeCavaleiro">Nome</label>
         <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu" class="form-control">
@@ -57,16 +59,18 @@
             <option value="Peixes">Peixes</option>
         </select>
         <!-- localNascimento -->
+        <input type="number" name="IdLocalNascimento" style="display: none" />
         <label for="txtLocalNascimento">Local de nascimento</label>
         <input id="txtLocalNascimento" type="text" name="localNascimento" placeholder="Ex: Porto Alegre" class="form-control">
         <!-- localTreinamento -->
+        <input type="number" name="IdLocalTreinamento" style="display: none" />
         <label for="txtLocalTreinamento">Local de treinamento</label>
         <input id="txtLocalTreinamento" type="text" name="localTreinamento" placeholder="Ex: Alvorada" class="form-control">
         <!-- Adicionar golpe -->
-        <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>
+        <button id="btnAdicionarGolpe" type="button" class="btn btn-default">Adicionar golpe...</button>
         <ul id="novosGolpes"></ul>
         <!-- Adicionar imagem -->
-        <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
+        <button id="btnAdicionarImg" type="button" class="btn btn-default">Adicionar imagem...</button>
         <ul id="novasImagens"></ul>
         <button type="submit" class="btn btn-success">Cadastrar!</button>
         <button id="btnFecharCadastro" type="button" class="btn btn-default">Fechar</button>
@@ -74,8 +78,17 @@
 </div>
 
 <hr>
-<div id="detalhes-cavaleiro"></div>
-<ul id="cavaleiros"></ul>
+
+<table id="tabelaCavaleiros">
+    <tr>
+        <td colspan="2">
+            <h4>Cavaleiros Cadastrados</h4>
+        </td>
+        <td>
+        </td>
+    </tr>
+
+</table>
 
 <script>
     var urlCavaleiroPost = '@Url.Action("Post")';
@@ -83,8 +96,8 @@
 
 @section scripts {
     <script src="~/Scripts/Models/Cavaleiros.js"></script>
-    <script src="~/Scripts/Views/CavaleiroIndexView.js"></script>
-    <script src="~/Scripts/Views/CavaleiroCadastroView.js"></script>   
+    <script src="~/Scripts/Views/CavaleiroCadastroView.js"></script>  
+    <script src="~/Scripts/Views/CavaleiroIndexView.js"></script> 
     <script>
         
         var indexView = new CavaleiroIndexView({
@@ -94,7 +107,7 @@
             successToast: new FeedbackToast({
                 element: $('#toastSucesso')
             }),
-            cavaleirosUi: $('#cavaleiros'),
+            cavaleirosUi: $('#tabelaCavaleiros'),
             urlCavaleiroGet: '@Url.Action("Get")',
             urlCavaleiroGetById: '@Url.Action("GetById")',
             urlCavaleiroPost: '@Url.Action("Post")',
