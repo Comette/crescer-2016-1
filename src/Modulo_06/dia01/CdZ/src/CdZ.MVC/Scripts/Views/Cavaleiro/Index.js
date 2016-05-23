@@ -82,10 +82,23 @@ function verificaNovosCavaleiros() {
                 qtdNovoCavaleiros++;
             }
         });
-        alert('Novos cavaleiros:' + qtdNovoCavaleiros);
+        if (qtdNovoCavaleiros > 0) {
+            exibeNotificationNovosCavaleiros(qtdNovoCavaleiros);
+        }
     });    
 };
 var intervalo = 1000 * 5;
 setInterval(verificaNovosCavaleiros, intervalo);
 
-
+function exibeNotificationNovosCavaleiros(qtd) {    
+    Notification.requestPermission().then(function (result) {
+        console.log(result);
+        if (result === 'granted') {
+            var options = {
+                body: 'Foram adicionados ' + qtd + ' novos Cavaleiros',
+                icon: 'https://d30y9cdsu7xlg0.cloudfront.net/png/18397-200.png'
+            }
+            new Notification('', options);
+        }
+    });    
+}
