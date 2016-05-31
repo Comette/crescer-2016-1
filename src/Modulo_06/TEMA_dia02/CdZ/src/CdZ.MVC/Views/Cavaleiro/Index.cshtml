@@ -79,27 +79,21 @@
 
 <hr>
 
-<table id="tabelaCavaleiros">
+<table class="table table-striped table-bordered" id="tabelaCavaleiros" align="center" style="width: auto; text-align:center;">
     <tr>
-        <td colspan="2">
-            <h4>Cavaleiros Cadastrados</h4>
-        </td>
-        <td>
+        <td colspan="3">
+            <h3>Cavaleiros Cadastrados</h3>
         </td>
     </tr>
 
 </table>
 
-<script>
-    var urlCavaleiroPost = '@Url.Action("Post")';
-</script>
-
 @section scripts {
     <script src="~/Scripts/Models/Cavaleiros.js"></script>
-    <script src="~/Scripts/Views/CavaleiroCadastroView.js"></script>  
-    <script src="~/Scripts/Views/CavaleiroIndexView.js"></script> 
+    <script src="~/Scripts/Views/CavaleiroCadastroView.js"></script>
+    <script src="~/Scripts/Views/CavaleiroIndexView.js"></script>
     <script>
-        
+
         var indexView = new CavaleiroIndexView({
             errorToast: new FeedbackToast({
                 element: $('#toastErro')
@@ -116,5 +110,5 @@
         });
         indexView.render();
     </script>
-    <script src="~/Scripts/Controller/CavaleiroController.js"></script> 
+    <script src="~/Scripts/Controller/CavaleiroController.js"></script>
 }

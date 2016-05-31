@@ -106,3 +106,10 @@ CavaleiroCadastroView.prototype.converteCavaleiroParaForm = function (data) {
     $('#txtDtNascimento').datepicker('setDate', data);
     
 }
+
+CavaleiroCadastroView.prototype.limpaFormulario = function () {
+    $('#frmNovoCavaleiro').hide();
+    $('#frmNovoCavaleiro')[0].reset();
+    $('#frmNovoCavaleiro ul[id=novasImagens]').empty();
+    $('#frmNovoCavaleiro ul[id=novosGolpes]').empty();
+}

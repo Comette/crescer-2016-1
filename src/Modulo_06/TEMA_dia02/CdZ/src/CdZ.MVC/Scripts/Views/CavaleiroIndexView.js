@@ -20,6 +20,7 @@ function CavaleiroIndexView(options) {
 CavaleiroIndexView.prototype.render = function () {
     var self = this;
     // 1 - Carregar lista de cavaleiros na tela
+    cavaleirosListados = [];
     this.cavaleiros.todos()
         .then(
             function onSuccess(res) {
@@ -41,6 +42,7 @@ CavaleiroIndexView.prototype.excluirCavaleiroNoServidor = function (e) {
     self.cavaleiros.excluir(e.data.id)
         .done(function (res) {
             self.successToast.show('Excluído com sucesso!');
+            self.atualizaCavaleirosListados(self);
         });
 };
 
@@ -58,6 +60,7 @@ CavaleiroIndexView.prototype.editarCavaleiroNoServidor = function (e) {
     self.cavaleiros.editar(cavaleiro)
         .done(function (res) {
             self.successToast.show('Cavaleiro atualizado com sucesso!');
+            self.atualizaCavaleirosListados(self);
         });   
 };
 
@@ -74,11 +77,11 @@ CavaleiroIndexView.prototype.verificaNovosCavaleiros = function (elem) {
                     cavaleirosListados.push(cava.Id);
                     qtdNovoCavaleiros++;
                 }
-            });
-            if (qtdNovoCavaleiros > 0) {
-                self.exibeNotificationNovosCavaleiros(qtdNovoCavaleiros);                
-            }
-    });
+            });            
+        });
+    if (qtdNovoCavaleiros > 0) {
+        self.exibeNotificationNovosCavaleiros(qtdNovoCavaleiros);
+    }
 };
 
 CavaleiroIndexView.prototype.exibeNotificationNovosCavaleiros = function (qtd) {
@@ -109,7 +112,7 @@ CavaleiroIndexView.prototype.addCavaleiroNaTabela = function (cavaleiro) {
         .append($('<td>')
             .append($('<img>').attr('src', Imagem.Url).attr('style', 'width: 100px; height: 70px;'))            
         )
-        .append($('<td>')
+        .append($('<td>').attr('style', 'vertical-align: middle')
             .append($('<span>').attr('style', 'font-size: 24px').text(cavaleiro.Nome))
         )
         .append($('<td>') 
@@ -117,8 +120,8 @@ CavaleiroIndexView.prototype.addCavaleiroNaTabela = function (cavaleiro) {
             .append(
                 $('<button>').addClass('btn btn-warning')
                     .click(function () {
-                        $().hide();
-                        $().show();
+                        $('#btnNovoCadastro').hide();
+                        $('#frmNovoCavaleiro').show();
                         cadastroView.converteCavaleiroParaForm({ cavaleiro: cavaleiro, self: cadastroView });
                     })
                     .text('Editar')
@@ -128,4 +131,9 @@ CavaleiroIndexView.prototype.addCavaleiroNaTabela = function (cavaleiro) {
                     .on('click', { id: cavaleiro.Id, self: this }, this.excluirCavaleiroNoServidor)
                     .text('Excluir')
         )));
+}
+
+CavaleiroIndexView.prototype.atualizaCavaleirosListados =  function(self){
+    self.cavaleirosUi.empty();
+    self.render();
 }

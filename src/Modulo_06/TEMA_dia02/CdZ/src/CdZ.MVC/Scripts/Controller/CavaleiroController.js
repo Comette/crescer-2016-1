@@ -16,8 +16,7 @@ $(function () {
     });
 
     $btnFecharCadastro.click(function (e) {
-        $formularioCadastro[0].reset();
-        $formularioCadastro.hide();
+        cadastroView.limpaFormulario();
         $btnNovoCadastro.show();
     });
 
@@ -37,8 +36,7 @@ $(function () {
             indexView.adicionarCavaleiroNoServidor({ self: indexView, cavaleiro: cavaleiro });
         }
         debugger;
-        $formularioCadastro[0].reset();
-        $formularioCadastro.hide();
+        cadastroView.limpaFormulario();
         $btnNovoCadastro.show();
         return e.preventDefault();
     })
