@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A5055FB5-41A5-C326-EF92-29E4EB024564" name="Ganhador">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:09:35 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="2FABA44D-8173-6BCB-57CC-3DB06A7EA4AC">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:09:57 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Acertos" id="23DB18A1-44AB-EDC7-0730-6A9AE8791608">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:10:58 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Premio" id="533B657B-3659-0276-92B8-0DECC4F3A872">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:11:18 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Concurso_ID" id="60BFCC1F-D71F-AD96-BEC0-E6590FACB675">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:13:36 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7DD2BA20-030D-D3F2-4ECF-63EF6D357DDD" referredColumn="711CB225-33A1-A59E-86A4-ACC33629441A"/>
+</associations>
+</Column>
+<Column name="Aposta_ID" id="F006A67F-097D-8D2E-7B68-DD9EA353A1FA">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:14:18 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7573EFFF-283F-62A9-2901-FA9E495727D3" referredColumn="B2DE3753-84D9-0513-5D68-C5B583D0B93E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79B04E68-8082-4B5C-C296-A99921CF081B" name="Ganhador_PK">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:09:57 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FABA44D-8173-6BCB-57CC-3DB06A7EA4AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A26CDA4F-D6B0-51E6-B454-B1A2763F0126" name="Ganhador_Concurso_FK">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:13:36 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60BFCC1F-D71F-AD96-BEC0-E6590FACB675"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C6D0139-B0EE-EE74-5EF1-2341FE160E4F" name="Ganhador_Aposta_FK">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:14:18 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F006A67F-097D-8D2E-7B68-DD9EA353A1FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

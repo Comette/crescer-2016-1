@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CA1972E0-CE2D-7516-FAD3-F36C74AC32B5" name="Premio">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:46:36 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="01DFF96F-F110-ED96-2E68-C313CD2B3EF9">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:47:29 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Total" id="7653B1F3-FCDB-31C2-0F8D-9FD22F66912E">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:47:53 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sena" id="465D8F5C-7F0E-C11F-85D4-DEB47DA518D3">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:48:10 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quina" id="07514F0F-1B42-B37C-E045-CFFE7D4246C6">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:48:23 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quadra" id="DAA644A0-D2B1-CE8F-5C68-858F023C2BD6">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:48:36 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AcumuloFimAno" id="3190705F-CBE7-1120-D11E-2DDAC69E8E2B">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:49:37 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AcumuloProximoConcurso" id="72E36291-4027-6CAD-4A8C-9D872C1FAC3F">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:51:22 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5017504E-CA03-EA15-1DFF-988F7701CF76" name="Premio_PK">
+<createdBy>victor.ribeiro</createdBy>
+<createdTime>2016-05-31 18:47:29 UTC</createdTime>
+<ownerDesignName>Tarefa01</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01DFF96F-F110-ED96-2E68-C313CD2B3EF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
