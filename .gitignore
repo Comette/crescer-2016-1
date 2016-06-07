@@ -49,3 +49,6 @@ bld/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+/src/Modulo_08/Aula01/Exercicio1/nbproject/private/
+/src/Modulo_08/Aula01/Ex01/nbproject/private/
+/src/Modulo_08/Aula01/Aula01/target/
