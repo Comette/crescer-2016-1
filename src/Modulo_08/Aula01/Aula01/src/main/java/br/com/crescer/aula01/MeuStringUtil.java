@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MeuStringUtil {
 
     public boolean estaVazia(String string) {
-        return string.trim().isEmpty();
+        return string != null || string.trim().isEmpty();
     }
 
     public int contaVogais(String string) {
