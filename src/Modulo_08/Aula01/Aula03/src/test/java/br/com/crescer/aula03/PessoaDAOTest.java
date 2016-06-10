@@ -22,7 +22,7 @@ public class PessoaDAOTest {
         instance.delete(obtido.get(0));
     }
     
-    @Test
+    //@Test
     public void testUpdate() {
         System.out.println("update");
         PessoaDAO instance = new PessoaDAO();

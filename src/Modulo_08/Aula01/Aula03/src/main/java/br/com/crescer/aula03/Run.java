@@ -12,6 +12,6 @@ public class Run {
         //System.out.println(dao.listAll());
         //MeuSQLUtils.executa("teste.sql");
         //MeuSQLUtils.importaCSV("import.csv");
-        MeuSQLUtils.exportarCSV("export.csv");
+        ///MeuSQLUtils.exportarCSV("export.csv");
     }
 }
