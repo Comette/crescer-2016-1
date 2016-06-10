@@ -18,7 +18,7 @@ public class MeuStringUtilTest {
         assertEquals(expResult, result);
     }
     
-    @Test
+    //@Test
     public void testEstaVaziaFalso() {
         System.out.println("estaVazia");
         String string = "   . ";

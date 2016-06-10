@@ -5,9 +5,11 @@ import java.util.List;
 public class Run {
 
     public static void main(String[] args) {
-        PessoaDAO dao = new PessoaDAO();
+        //PessoaDAO dao = new PessoaDAO();
         //dao.insert(new Pessoa(0l, "Teste"));
-        List<Pessoa> pessoas = dao.findNome("Teste");
-        System.out.println(pessoas);
+        //List<Pessoa> pessoas = dao.findNome("Teste");
+        //System.out.println(pessoas);
+        //System.out.println(dao.listAll());
+        MeuSQLUtils.executa("teste.sql");
     }
 }
