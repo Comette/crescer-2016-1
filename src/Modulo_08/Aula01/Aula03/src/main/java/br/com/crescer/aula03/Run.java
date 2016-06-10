@@ -10,6 +10,8 @@ public class Run {
         //List<Pessoa> pessoas = dao.findNome("Teste");
         //System.out.println(pessoas);
         //System.out.println(dao.listAll());
-        MeuSQLUtils.executa("teste.sql");
+        //MeuSQLUtils.executa("teste.sql");
+        //MeuSQLUtils.importaCSV("import.csv");
+        MeuSQLUtils.exportarCSV("export.csv");
     }
 }
