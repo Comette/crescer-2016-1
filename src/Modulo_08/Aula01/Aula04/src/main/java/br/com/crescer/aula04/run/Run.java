@@ -7,11 +7,11 @@ import javax.persistence.Persistence;
 
 public class Run {
 
-    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER16");
-    static final EntityManager em = emf.createEntityManager();
+//    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER16");
+//    static final EntityManager em = emf.createEntityManager();
 
     public static void main(String[] args) {
-        System.out.println(em.isOpen());
+//        System.out.println(em.isOpen());
 
 //        Pessoa pessoaEncontrada = em.find(Pessoa.class, 1l);
 //        System.out.println(pessoaEncontrada.getNmPessoa());
@@ -23,7 +23,7 @@ public class Run {
 //        em.persist(pessoa);
 //
 //        em.getTransaction().commit();
-        em.close();
-        emf.close();
+//        em.close();
+//        emf.close();
     }
 }
