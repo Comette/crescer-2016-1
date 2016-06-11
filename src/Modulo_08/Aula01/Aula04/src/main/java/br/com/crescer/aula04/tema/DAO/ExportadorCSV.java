@@ -12,9 +12,9 @@ import java.util.List;
 
 public class ExportadorCSV {
 
-    private Class tipoEntidade;
+    private static Class tipoEntidade;
 
-    public String exportar(Object entidade) {
+    public static String exportar(Object entidade) {
         tipoEntidade = entidade.getClass();
         String retorno;
         switch (tipoEntidade.getName()) {
@@ -22,36 +22,46 @@ public class ExportadorCSV {
                 try {
                     exportarPedidos();
                     retorno = "SUCESSO";
+                    break;
                 } catch (IOException ex) {
                     retorno = ex.getMessage();
+                    break;
                 }
             case "Cidade":
                 try {
                     exportarCidades();
                     retorno = "SUCESSO";
+                    break;
                 } catch (IOException ex) {
                     retorno = ex.getMessage();
+                    break;
                 }
             case "Cliente":
                 try {
                     exportarClientes();
                     retorno = "SUCESSO";
+                    break;
                 } catch (IOException ex) {
                     retorno = ex.getMessage();
+                    break;
                 }
             case "Material":
                 try {
                     exportarMateriais();
                     retorno = "SUCESSO";
+                    break;
                 } catch (IOException ex) {
                     retorno = ex.getMessage();
+                    break;
                 }
             case "Produto":
                 try {
                     exportarProdutos();
                     retorno = "SUCESSO";
+                    break;
                 } catch (IOException ex) {
                     retorno = ex.getMessage();
+                    break;
                 }
             default:
                 retorno = "Entidade inválida!";
@@ -59,7 +69,7 @@ public class ExportadorCSV {
         return retorno;
     }
 
-    private void exportarPedidos() throws IOException {
+    private static void exportarPedidos() throws IOException {
         PedidoDAO repositorio = new PedidoDAO();
         List<Pedido> todos = repositorio.listAll();
         FileWriter writer = new FileWriter(String.format("export-pedidos-%s.csv", new Date().toString()));
@@ -80,7 +90,7 @@ public class ExportadorCSV {
         writer.close();
     }
 
-    private void exportarCidades() throws IOException {
+    private static void exportarCidades() throws IOException {
         CidadeDAO repositorio = new CidadeDAO();
         List<Cidade> todas = repositorio.listAll();
         FileWriter writer = new FileWriter(String.format("export-cidades-%s.csv", new Date().toString()));
@@ -95,7 +105,7 @@ public class ExportadorCSV {
         writer.close();
     }
 
-    private void exportarClientes() throws IOException {
+    private static void exportarClientes() throws IOException {
         ClienteDAO repositorio = new ClienteDAO();
         List<Cliente> todos = repositorio.listAll();
         FileWriter writer = new FileWriter(String.format("export-clientes-%s.csv", new Date().toString()));
@@ -120,7 +130,7 @@ public class ExportadorCSV {
         writer.close();
     }
 
-    private void exportarMateriais() throws IOException {
+    private static void exportarMateriais() throws IOException {
         MaterialDAO repositorio = new MaterialDAO();
         List<Material> todos = repositorio.listAll();
         FileWriter writer = new FileWriter(String.format("export-materiais-%s.csv", new Date().toString()));
@@ -137,7 +147,7 @@ public class ExportadorCSV {
         writer.close();
     }
 
-    private void exportarProdutos() throws IOException {
+    private static void exportarProdutos() throws IOException {
         ProdutoDAO repositorio = new ProdutoDAO();
         List<Produto> todos = repositorio.listAll();
         FileWriter writer = new FileWriter(String.format("export-cidades-%s.csv", new Date().toString()));
