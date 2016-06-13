@@ -162,7 +162,7 @@ public class ExportadorCSV {
             writer.append(",");
             writer.append(produto.getPrecoVenda().toString());
             writer.append(",");
-            writer.append(produto.getSitucacao());
+            writer.append(produto.getSituacao());
             writer.append("\n");            
         }
     }

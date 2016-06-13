@@ -8,43 +8,39 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "PEDIDO")
+//@NamedQueries({
+//    @NamedQuery(name = "Pedido.findAll", query = "SELECT p FROM Pedido p"),
+//    @NamedQuery(name = "Pedido.findByIdpedido", query = "SELECT p FROM Pedido p WHERE p.idpedido = :idpedido"),
+//    @NamedQuery(name = "Pedido.findByDatapedido", query = "SELECT p FROM Pedido p WHERE p.datapedido = :datapedido"),
+//    @NamedQuery(name = "Pedido.findByDataentrega", query = "SELECT p FROM Pedido p WHERE p.dataentrega = :dataentrega"),
+//    @NamedQuery(name = "Pedido.findByValorpedido", query = "SELECT p FROM Pedido p WHERE p.valorpedido = :valorpedido"),
+//    @NamedQuery(name = "Pedido.findBySituacao", query = "SELECT p FROM Pedido p WHERE p.situacao = :situacao")})
 public class Pedido implements Serializable {
-    
+
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_ID_PEDIDO")
-    @SequenceGenerator(name = "SEQ_ID_PEDIDO", sequenceName = "SEQ_ID_PEDIDO", allocationSize = 1)
     @Basic(optional = false)
-    @Column(name = "IDCLIENTE")
+    @Column(name = "IDPEDIDO")
     private long idPedido;
     
-    @OneToOne
-    @JoinColumn(name="IDCLIENTE")
-    private Cliente cliente;
-    
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
-    public List<PedidoItem> itens;
-    
-    @Temporal(TemporalType.DATE)
     @Basic(optional = false)
     @Column(name = "DATAPEDIDO")
+    @Temporal(TemporalType.DATE)
     private Date dataPedido;
     
-    @Temporal(TemporalType.DATE)
-    @Basic(optional = false)
     @Column(name = "DATAENTREGA")
+    @Temporal(TemporalType.DATE)
     private Date dataEntrega;
     
     @Basic(optional = false)
@@ -54,6 +50,23 @@ public class Pedido implements Serializable {
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private char situacao;
+    
+    @JoinColumn(name = "IDCLIENTE", referencedColumnName = "IDCLIENTE")
+    @ManyToOne(optional = false)
+    private Cliente cliente;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")
+    private List<PedidoItem> itens;
+
+    public Pedido() {
+    }
+
+    public Pedido(long idPedido, Date dataPedido, BigDecimal valorPedido, Character situacao) {
+        this.idPedido = idPedido;
+        this.dataPedido = dataPedido;
+        this.valorPedido = valorPedido;
+        this.situacao = situacao;
+    }
 
     public long getIdPedido() {
         return idPedido;
@@ -61,14 +74,6 @@ public class Pedido implements Serializable {
 
     public void setIdPedido(long idPedido) {
         this.idPedido = idPedido;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public Date getDataPedido() {
@@ -95,12 +100,20 @@ public class Pedido implements Serializable {
         this.valorPedido = valorPedido;
     }
 
-    public char getSituacao() {
+    public Character getSituacao() {
         return situacao;
     }
 
-    public void setSituacao(char situacao) {
+    public void setSituacao(Character situacao) {
         this.situacao = situacao;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public List<PedidoItem> getItens() {
@@ -110,5 +123,5 @@ public class Pedido implements Serializable {
     public void setItens(List<PedidoItem> itens) {
         this.itens = itens;
     }
-       
+    
 }

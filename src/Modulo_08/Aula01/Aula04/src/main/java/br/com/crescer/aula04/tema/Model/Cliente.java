@@ -1,23 +1,33 @@
 package br.com.crescer.aula04.tema.Model;
 
+import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "CLIENTE")
-public class Cliente {
-    
+//@NamedQueries({
+//    @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c"),
+//    @NamedQuery(name = "Cliente.findByIdcliente", query = "SELECT c FROM Cliente c WHERE c.idcliente = :idcliente"),
+//    @NamedQuery(name = "Cliente.findByNome", query = "SELECT c FROM Cliente c WHERE c.nome = :nome"),
+//    @NamedQuery(name = "Cliente.findByRazaosocial", query = "SELECT c FROM Cliente c WHERE c.razaosocial = :razaosocial"),
+//    @NamedQuery(name = "Cliente.findByEndereco", query = "SELECT c FROM Cliente c WHERE c.endereco = :endereco"),
+//    @NamedQuery(name = "Cliente.findByBairro", query = "SELECT c FROM Cliente c WHERE c.bairro = :bairro"),
+//    @NamedQuery(name = "Cliente.findByCep", query = "SELECT c FROM Cliente c WHERE c.cep = :cep"),
+//    @NamedQuery(name = "Cliente.findBySituacao", query = "SELECT c FROM Cliente c WHERE c.situacao = :situacao")})
+public class Cliente implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_ID_CLIENTE")
-    @SequenceGenerator(name = "SEQ_ID_CLIENTE", sequenceName = "SEQ_ID_CLIENTE", allocationSize = 1)
     @Basic(optional = false)
     @Column(name = "IDCLIENTE")
     private long idCliente;
@@ -30,31 +40,45 @@ public class Cliente {
     @Column(name = "RAZAOSOCIAL")
     private String razaoSocial;
     
-    @Basic(optional = false)
     @Column(name = "ENDERECO")
     private String endereco;
     
-    @Basic(optional = false)
     @Column(name = "BAIRRO")
     private String bairro;
     
-    @OneToOne
-    @JoinColumn(name="IDCIDADE")
-    private Cidade cidade;
-    
-    @Basic(optional = false)
     @Column(name = "CEP")
-    private long cep;
+    private Integer cep;
     
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private char situacao;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+    private List<Pedido> pedidos;
+    
+    @JoinColumn(name = "IDCIDADE", referencedColumnName = "IDCIDADE")
+    @ManyToOne
+    private Cidade cidade;
+    
+    public Cliente() {
+    }
+
+    public Cliente(long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public Cliente(long idCliente, String nome, String razaoSocial, Character situacao) {
+        this.idCliente = idCliente;
+        this.nome = nome;
+        this.razaoSocial = razaoSocial;
+        this.situacao = situacao;
+    }
 
     public long getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Long idCliente) {
+    public void setIdCliente(long idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -62,8 +86,8 @@ public class Cliente {
         return nome;
     }
 
-    public void setNome(String Nome) {
-        this.nome = Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getRazaoSocial() {
@@ -90,19 +114,11 @@ public class Cliente {
         this.bairro = bairro;
     }
 
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
-    public long getCep() {
+    public Integer getCep() {
         return cep;
     }
 
-    public void setCep(Long cep) {
+    public void setCep(Integer cep) {
         this.cep = cep;
     }
 
@@ -113,5 +129,21 @@ public class Cliente {
     public void setSituacao(char situacao) {
         this.situacao = situacao;
     }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
     
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
 }

@@ -1,6 +1,9 @@
 package br.com.crescer.aula04.run;
 
 import br.com.crescer.aula04.entity.Pessoa;
+import br.com.crescer.aula04.tema.DAO.CidadeDAO;
+import br.com.crescer.aula04.tema.Model.Cidade;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,5 +28,12 @@ public class Run {
 //        em.getTransaction().commit();
 //        em.close();
 //        emf.close();
+
+        CidadeDAO repo = new CidadeDAO();
+        List<Cidade> todas = repo.listAll();
+        for(Cidade cidade : todas){
+            System.out.println(cidade.getNome() + ", " + cidade.getUF());
+        }
+        
     }
 }
