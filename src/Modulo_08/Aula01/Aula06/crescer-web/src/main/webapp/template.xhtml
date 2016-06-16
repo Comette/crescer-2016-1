@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 
     <h:head>
@@ -12,15 +13,35 @@
 
     <h:body>
         <div class="navbar navbar-default">
-            <span class="brand">
+            <span class="navbar-brand">
                 Minha Empresa
             </span>
         </div>
-        <div class="container">
-            <ui:insert>
-                
-            </ui:insert>
-        </div>
+        
+        <h:form>
+            <ui:param name="pes" value="#{pessoa.pessoa}"/>
+            <div class="container">
+                <div class="form-group">
+                    <h:outputLabel for="txtNome" value="Nome"/>
+                    <h:inputText id="txtNome" styleClass="form-control" value="#{pes.nome}"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="numIdade" value="Idade"/>
+                    <h:inputText id="numIdade" styleClass="form-control" value="#{pes.idade}"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="txtProfissao" value="Profissao"/>
+                    <h:inputText id="txtProfissao" styleClass="form-control" value="#{pes.profissao}"/>
+                </div>
+                <div class="form-group">
+                    <h:commandButton value="Salvar" styleClass="btn btn-success" action="#{repositorio.addPessoa(pes)}">
+                        <f:ajax execute="@form" render="@form"/>                        
+                    </h:commandButton>
+                </div>
+
+                <ui:insert id="listagem" name="corpo"></ui:insert>
+            </div>
+        </h:form>
 
     </h:body>
 
