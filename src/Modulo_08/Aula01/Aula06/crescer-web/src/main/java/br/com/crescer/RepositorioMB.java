@@ -18,7 +18,24 @@ public class RepositorioMB implements Serializable {
     }
 
     public void addPessoa(Pessoa pessoa) {
-        RepositorioStatico.getRepositorio().getPessoas().add(pessoa);
+        if (pessoa.getId() > 0) {
+            String indexNoBanco=null;
+            for(Pessoa pes : RepositorioStatico.getRepositorio().getPessoas()){
+                if(pes.getId()==pessoa.getId()){
+                    indexNoBanco = String.valueOf(RepositorioStatico.getRepositorio().getPessoas().indexOf(pes));
+                    break;
+                }
+            }
+            if(indexNoBanco!=null){
+                RepositorioStatico.getRepositorio().getPessoas().set(Integer.parseInt(indexNoBanco), pessoa);
+            }else{
+                pessoa.setId(RepositorioStatico.getRepositorio().getPessoas().get(RepositorioStatico.getRepositorio().getPessoas().size()-1).getId() + 1);
+                RepositorioStatico.getRepositorio().getPessoas().add(pessoa);
+            }
+        } else {
+            pessoa.setId(RepositorioStatico.getRepositorio().getPessoas().get(RepositorioStatico.getRepositorio().getPessoas().size()-1).getId() + 1);
+            RepositorioStatico.getRepositorio().getPessoas().add(pessoa);
+        }
     }
 
     public void deletePessoa(Pessoa pessoa) {

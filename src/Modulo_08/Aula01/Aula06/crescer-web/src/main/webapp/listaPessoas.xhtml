@@ -11,7 +11,9 @@
 
         <ui:composition template="/template.xhtml">
             <ui:define name="corpo">
-                <h1>TESTE</h1>
+                <hr/>
+                <h1>Lista</h1>
+                <br/>
                 <div id="lista"> 
                     <h:dataTable value="#{repositorio.pessoas}" var="p" styleClass="table table-striped">
                         <h:column>
@@ -30,7 +32,10 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">Ações</f:facet>
-                            <h:commandButton styleClass="btn btn-danger" value="excluir" action="#{repositorio.deletePessoa(p)}">
+                            <h:commandButton styleClass="btn btn-warning" style="margin: 5px" value="Editar" action="#{pessoa.setPessoa(p)}">
+                                <f:ajax execute="" render="@form"/>
+                            </h:commandButton>
+                            <h:commandButton styleClass="btn btn-danger" style="margin: 5px" value="excluir" action="#{repositorio.deletePessoa(p)}">
                                 <f:ajax execute="" render="@form"/>
                             </h:commandButton>
                         </h:column>
