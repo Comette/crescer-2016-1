@@ -12,5 +12,6 @@
     </properties>
   <modules>
     <module>crescer-web</module>
+    <module>Aula08</module>
   </modules>
 </project>
