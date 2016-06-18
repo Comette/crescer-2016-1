@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Pre-RedeSocial</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/c-bootstrap.css}"/>
+    </head>
+    <body> 
+
+        <div class="navbar navbar-default">
+            <div class="container-fluid">
+                <span class="navbar-brand">Pré_Rede-Social</span>
+            </div>
+        </div>
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Nascimento</th>
+                        <th>Email</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${usuarios}">
+                        <th><img th:src="${u.imgPerfil}"/></th>
+                        <th th:text="${u.id}">ID</th>
+                        <th th:text="${u.nome}">NOME</th>
+                        <th th:text="${u.nascimento}">NASCIMENTO</th>
+                        <th th:text="${u.email}">EMAIL</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
