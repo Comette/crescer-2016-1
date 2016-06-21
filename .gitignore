@@ -62,3 +62,8 @@ bld/
 /src/Modulo_08/Aula01/Aula06/Aula08/spring-crescer-web/target/
 /src/Modulo_08/PreRede/PreRedeSocial/pre-rede-social/target/
 /src/Modulo_08/iConnect/MVC/target/
+/src/Modulo_08/iConnect/Dominio/target/
+/src/Modulo_08/iConnect/Infraestrutura/target/
+/src/Modulo_08/iConnect/iconnect-dominio/target/
+/src/Modulo_08/iConnect/iconnect-infraestrutura/target/
+/src/Modulo_08/iConnect/iconnect-mvc/target/
