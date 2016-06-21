@@ -14,4 +14,17 @@ public class UsuarioServico {
     public Iterable<Usuario> usuarios(){
         return repositorio.findAll();
     }
+
+    public Usuario buscaPorEmailSenha(String email, String senha) {
+        String senhaCriptografada = this.criptografa(senha);
+        return repositorio.findByEmailAndSenha(email, senhaCriptografada);        
+    }
+
+    private String criptografa(String senha) {
+        return "123" + senha;
+    }
+
+    public Usuario buscaPorId(long id) {
+        return repositorio.findOne(id);
+    }
 }
