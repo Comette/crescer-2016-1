@@ -1,0 +1,16 @@
+﻿@model Tema_Dia03.Models.SobreMimModel
+
+
+@{
+    ViewBag.Title = "Sobre Mim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Nome</h2>
+<img src="~/Content/Imagens/sobre2.jpg" alt="@Model.Nome" />
+<p>
+    <strong>Nome:</strong> @Model.Nome <br>
+    <strong>Idade:</strong> @Model.Idade <br>
+    <strong>Altura:</strong> @Model.Altura metros <br>
+    <strong>Peso:</strong> @Model.Peso kg. <br>
+    <strong>Uma fala de vitória:</strong> "Homens realmente grandes não nascem grandes, tornam-se grandes." <br>

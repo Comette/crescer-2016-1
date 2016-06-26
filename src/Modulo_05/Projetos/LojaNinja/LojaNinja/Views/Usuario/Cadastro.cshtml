@@ -1,0 +1,72 @@
+﻿@model LojaNinja.MVC.Models.CadastroModel
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+@section Scripts {
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h2>Cadastro</h2>
+
+@using (Html.BeginForm("SalvarUsuario", "Usuario", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Senha, new { @class = "form-control", placeholder = "Deve conter 1 letra MAIÚSCULA, 1 letra minúscula, 1 número e ao menos 8 caracteres." } )
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmarSenha, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmarSenha, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.ConfirmarSenha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success">
+                    <i style="padding-right: 5px;" class="glyphicon glyphicon-floppy-saved"></i>
+                    CADASTRAR
+                </button>
+                <span style="padding: 2px;display: inline-block;">
+                    <a href="@Url.Action("Index", "Pedido")" class="btn btn-default">
+                        <span style="padding-right: 5px;" class="glyphicon glyphicon-arrow-left"></span>
+                        VOLTAR
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

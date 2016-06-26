@@ -1,0 +1,14 @@
+METODOS JQUERY
+$() -> selecionar
+$().text([parametro]) -> selecionar/editar texto
+$().show() -> exibe
+$().hide() -> esconde
+$().toggle() -> muda display atual esconde/exibe
+$().eq(index) -> retorna o elemento no index
+$().remove() -> retira do html
+$().html() -> seleciona/edita html
+$().append($('<h1>')) -> add child ao final
+$().prepend($('<h1>')) -> add child no inicio
+$().addClass() -> adiciona Class
+$().toggleClass() -> adiciona/remove class
+$().attr([paramentro]) -> exibe/modifica atributo
