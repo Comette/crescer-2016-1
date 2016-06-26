@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Tarefa01" id="C8C57524-42D7-AE9E-D5EC-36C435DE6F5D" version="3.5">
-<createdBy>victor.ribeiro</createdBy>
-<createdTime>2016-05-31 17:41:19 UTC</createdTime>
-<ownerDesignName>Tarefa01</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>C8C57524-42D7-AE9E-D5EC-36C435DE6F5D</designId>
-</OSDM_Design>

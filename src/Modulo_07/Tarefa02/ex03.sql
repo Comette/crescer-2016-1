@@ -1,1 +1,0 @@
-SELECT * from cliente WHERE RAZAOSOCIAL LIKE '%Ltda%' OR NOME LIKE '%Ltda%';

@@ -1,1 +1,0 @@
-select c.IDCLIENTE, c.NOME, cid.Nome, cid.UF from cliente c inner join cidade cid on c.IDCIDADE = cid.IDCIDADE;
